@@ -1,193 +1,884 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>岳永强 个人简介</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", Arial, sans-serif;
-        }
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.8;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-        }
-        h2 {
-            color: #2980b9;
-            margin: 35px 0 15px;
-            font-size: 20px;
-        }
-        h3 {
-            margin: 20px 0 10px;
-            color: #34495e;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            background: #fafafa;
-        }
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        table th {
-            background-color: #ecf0f1;
-        }
-        p {
-            margin: 10px 0;
-            text-indent: 2em;
-        }
-        ul {
-            margin: 10px 0 10px 2em;
-        }
-        li {
-            margin: 8px 0;
-        }
-        .section {
-            margin-bottom: 25px;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            table th, table td {
-                padding: 8px;
-                font-size: 14px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中原帮办 — 商业全链帮办代办系统</title>
+<meta name="description" content="由平顶山标准化博士团队领衔，AI智能体+真人调度，覆盖政务服务、标准化、营商环境、项目申报、创业孵化等全链条帮办服务。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;--bg2:#141414;--bg3:#1a1a1a;--bg4:#222;
+  --text:#e8e8e8;--text2:#aaa;--text3:#888;
+  --accent:#6C5CE7;--accent2:#a29bfe;--accent3:#4536c4;
+  --gold:#f0c040;--gold2:#d4a830;--green:#27ae60;--teal:#00b894;
+  --red:#e74c3c;--orange:#e67e22;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
+  --radius:12px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans SC','Inter',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+a{color:var(--accent2);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(108,92,231,.12) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(240,192,64,.06) 0%,transparent 50%);animation:drift 20s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-3%,2%)}}
+.hero-content{position:relative;z-index:1;text-align:center;padding:40px 20px}
+.hero-badge{display:inline-block;padding:6px 16px;border:1px solid var(--accent);border-radius:20px;font-size:13px;color:var(--accent2);letter-spacing:1px;margin-bottom:20px;background:rgba(108,92,231,.08)}
+.hero h1{font-size:clamp(36px,6vw,64px);font-weight:700;margin-bottom:8px;line-height:1.1}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:clamp(16px,2.5vw,22px);color:var(--text2);max-width:600px;margin:0 auto 32px;font-weight:300}
+.hero-tags{display:flex;gap:12px;justify-content:center;margin-bottom:40px;flex-wrap:wrap}
+.hero-tag{padding:8px 16px;border-radius:8px;background:var(--bg3);border:1px solid var(--border2);font-size:14px;color:var(--text2);transition:all .3s}
+.hero-tag:hover{border-color:var(--accent);color:var(--accent2)}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 32px;border-radius:var(--radius);font-size:16px;font-weight:500;cursor:pointer;transition:all .3s;border:none;display:inline-block;text-align:center}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent3);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text2)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:#000;font-weight:600}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+
+.section{padding:80px 0}
+.section-label{font-size:13px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-bottom:12px;font-weight:500}
+.section h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:8px}
+.section h2 span{color:var(--gold)}
+.section-desc{font-size:17px;color:var(--text2);max-width:680px;margin-bottom:48px}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.problem-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:all .3s}
+.problem-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.problem-card .icon{font-size:28px;margin-bottom:12px}
+.problem-card h3{font-size:17px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.problem-card p{font-size:14px;color:var(--text3);line-height:1.6}
+
+.team-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.team-header{text-align:center;margin-bottom:48px}
+.team-header h2{font-size:clamp(28px,4vw,36px)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;max-width:900px;margin:0 auto}
+.team-member{text-align:center;padding:24px;border-radius:var(--radius-lg);background:var(--bg3);border:1px solid var(--border);transition:all .3s;position:relative}
+.team-member:hover{border-color:var(--gold2);transform:translateY(-4px)}
+.team-member .avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;border:2px solid var(--border2)}
+.team-member.human .avatar{background:linear-gradient(135deg,var(--accent),var(--gold));color:#fff;border-color:var(--gold)}
+.team-member.ai .avatar{background:var(--bg4);color:var(--accent2);border-color:var(--accent)}
+.team-member .name{font-size:15px;font-weight:600;margin-bottom:4px}
+.team-member .role{font-size:12px;color:var(--text3)}
+.team-member .star{position:absolute;top:8px;right:12px;font-size:10px;color:var(--gold)}
+
+.howto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.howto-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-align:center;transition:all .3s}
+.howto-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.howto-card .howto-num{font-size:36px;font-weight:700;color:var(--accent2);margin-bottom:8px}
+.howto-card h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.howto-card p{font-size:13px;color:var(--text3);line-height:1.6}
+
+.agent-filter{display:flex;gap:10px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
+.agent-filter-btn{padding:8px 18px;border-radius:8px;font-size:13px;cursor:pointer;border:1px solid var(--border);background:var(--bg2);color:var(--text2);transition:all .3s}
+.agent-filter-btn:hover{border-color:var(--accent);color:var(--accent2)}
+.agent-filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.agents-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+.agent-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;transition:all .3s;cursor:pointer;position:relative}
+.agent-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.agent-card .agent-icon{font-size:28px;margin-bottom:8px}
+.agent-card .agent-name{font-size:15px;font-weight:600;margin-bottom:4px}
+.agent-card .agent-desc{font-size:11px;color:var(--text3);line-height:1.4}
+.agent-card .agent-stars{font-size:11px;color:var(--gold);margin-top:6px}
+.agent-card .agent-click-hint{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--accent2);opacity:0;transition:opacity .3s}
+.agent-card:hover .agent-click-hint{opacity:1}
+.agent-card.tier-5{border-color:rgba(108,92,231,.3);background:rgba(108,92,231,.06)}
+.agent-card.tier-4{border-color:rgba(240,192,64,.2);background:rgba(240,192,64,.04)}
+.agent-card.tier-3{border-color:rgba(0,184,148,.15);background:rgba(0,184,148,.03)}
+.agent-card.hidden{display:none}
+
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.75);z-index:1000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.modal-overlay.show{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);max-width:720px;width:95%;max-height:85vh;overflow-y:auto;position:relative;animation:modalSlide .3s ease}
+@keyframes modalSlide{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--bg4);border:1px solid var(--border);color:var(--text2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
+.modal-close:hover{background:var(--accent);color:#fff}
+.modal-hero{padding:32px 32px 24px;border-bottom:1px solid var(--border)}
+.modal-hero-icon{font-size:48px;margin-bottom:12px}
+.modal-hero h3{font-size:24px;font-weight:700;margin-bottom:4px}
+.modal-hero h3 span{color:var(--gold)}
+.modal-hero .modal-stars{font-size:14px;color:var(--gold);margin-bottom:8px}
+.modal-hero .modal-subtitle{font-size:14px;color:var(--text3)}
+.modal-body{padding:24px 32px 32px}
+.modal-section{margin-bottom:24px}
+.modal-section-title{font-size:15px;font-weight:600;color:var(--accent2);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.modal-section-title::before{content:'';width:4px;height:16px;background:var(--accent);border-radius:2px}
+.modal-skill-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.modal-skill-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px 16px;transition:all .2s}
+.modal-skill-item:hover{border-color:var(--accent)}
+.modal-skill-item .skill-name{font-size:14px;font-weight:600;margin-bottom:2px}
+.modal-skill-item .skill-desc{font-size:12px;color:var(--text3)}
+.modal-advantage{background:rgba(108,92,231,.08);border:1px solid rgba(108,92,231,.2);border-radius:8px;padding:16px;margin-bottom:16px}
+.modal-advantage .adv-title{font-size:14px;font-weight:600;color:var(--gold);margin-bottom:4px}
+.modal-advantage .adv-text{font-size:13px;color:var(--text2);line-height:1.6}
+.modal-tiers{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.modal-tier-badge{padding:8px 16px;border-radius:8px;font-size:13px;border:1px solid var(--border)}
+.modal-tier-badge.tier-299{background:rgba(0,184,148,.08);border-color:rgba(0,184,148,.3);color:var(--teal)}
+.modal-tier-badge.tier-999{background:rgba(108,92,231,.1);border-color:rgba(108,92,231,.3);color:var(--accent2)}
+.modal-tier-badge.tier-9999{background:rgba(240,192,64,.1);border-color:rgba(240,192,64,.3);color:var(--gold)}
+.modal-flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.modal-flow-step{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--text2);text-align:center;flex:1;min-width:100px}
+.modal-flow-step .step-num{font-size:18px;font-weight:700;color:var(--accent2);margin-bottom:2px}
+.modal-flow-arrow{color:var(--text3);font-size:16px}
+.modal-cta-area{text-align:center;padding:24px 32px;background:var(--bg3);border-top:1px solid var(--border)}
+.modal-cta-area p{font-size:14px;color:var(--text2);margin-bottom:16px}
+.modal-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.pricing-section{background:var(--bg2);border-top:1px solid var(--border)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
+.pricing-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 24px;text-align:center;transition:all .3s}
+.pricing-card:hover{transform:translateY(-4px)}
+.pricing-card.featured{border-color:var(--accent);background:rgba(108,92,231,.08);position:relative}
+.pricing-card.featured::before{content:'推荐';position:absolute;top:-1px;right:24px;padding:4px 12px;background:var(--accent);color:#fff;font-size:12px;border-radius:0 0 8px 8px;font-weight:500}
+.pricing-card .price{font-size:42px;font-weight:700;margin:16px 0 4px}
+.pricing-card .price span{font-size:16px;font-weight:400;color:var(--text3)}
+.pricing-card .price-unit{font-size:13px;color:var(--text3);margin-bottom:20px}
+.pricing-card .tier-name{font-size:18px;font-weight:600;margin-bottom:4px}
+.pricing-card .tier-sub{font-size:13px;color:var(--text3)}
+.pricing-card ul{list-style:none;padding:0;margin:24px 0;text-align:left}
+.pricing-card li{font-size:14px;color:var(--text2);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.pricing-card li::before{content:'✓';color:var(--green);font-weight:700;font-size:13px}
+.pricing-card .human-badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:500;margin-top:8px}
+.pricing-card .human-badge.low{background:rgba(0,184,148,.1);color:var(--teal)}
+.pricing-card .human-badge.mid{background:rgba(240,192,64,.1);color:var(--gold)}
+.pricing-card .human-badge.high{background:rgba(108,92,231,.15);color:var(--accent2)}
+
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.case-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:all .3s}
+.case-card:hover{border-color:var(--gold2)}
+.case-card .case-tag{font-size:12px;color:var(--accent2);margin-bottom:8px;font-weight:500}
+.case-card h3{font-size:16px;font-weight:600;margin-bottom:6px}
+.case-card p{font-size:13px;color:var(--text3);line-height:1.5}
+
+.timeline{position:relative;max-width:700px;margin:0 auto;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:32px}
+.timeline-item::before{content:'';position:absolute;left:-28px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.timeline-item .year{font-size:13px;color:var(--accent2);font-weight:600;margin-bottom:4px}
+.timeline-item .event{font-size:15px;font-weight:500;margin-bottom:2px}
+.timeline-item .detail{font-size:13px;color:var(--text3)}
+
+.cta-section{text-align:center;padding:80px 0;background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.cta-section h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+.cta-section h2 span{color:var(--gold)}
+.cta-section p{font-size:17px;color:var(--text2);max-width:500px;margin:0 auto 32px}
+
+footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);font-size:13px;color:var(--text3)}
+
+/* Form section */
+.form-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.form-container{max-width:640px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-row.single{grid-template-columns:1fr}
+.form-group{position:relative}
+.form-group label{font-size:13px;color:var(--text2);margin-bottom:6px;display:block;font-weight:500}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:12px 16px;color:var(--text);font-size:15px;font-family:inherit;transition:all .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,92,231,.15)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text3)}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23888'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.form-group select option{background:var(--bg3);color:var(--text)}
+.form-group textarea{min-height:120px;resize:vertical;line-height:1.6}
+.form-group .required-dot{color:var(--red);font-size:12px;margin-left:4px}
+.form-tier-preview{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.form-tier-preview .preview-badge{padding:4px 12px;border-radius:6px;font-size:12px;border:1px solid var(--border)}
+.form-agent-preview{font-size:13px;color:var(--accent2);margin-top:8px;padding:6px 12px;background:rgba(108,92,231,.08);border-radius:6px;display:none}
+.form-agent-preview.show{display:block}
+.form-submit-area{text-align:center;margin-top:24px}
+.form-redirect-area{text-align:center;max-width:700px;margin:0 auto}
+.form-redirect-card{background:var(--bg3);border:2px solid var(--gold);border-radius:16px;padding:40px 32px}
+.form-redirect-icon{font-size:48px;margin-bottom:12px}
+.form-redirect-card h3{font-size:22px;font-weight:700;color:var(--gold);margin-bottom:12px}
+.form-redirect-card p{font-size:15px;color:var(--text2);line-height:1.7}
+.form-redirect-alt{margin-top:24px;font-size:14px;color:var(--text3);line-height:1.6}
+
+/* Three-channel submit */
+.channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.channel-card{background:var(--bg3);border:2px solid var(--border);border-radius:12px;padding:24px 20px;text-align:center;transition:all .3s;cursor:pointer}
+.channel-card:hover{transform:translateY(-4px)}
+.channel-card.feishu{border-color:rgba(0,184,148,.3)}.channel-card.feishu:hover{border-color:var(--teal);background:rgba(0,184,148,.06)}
+.channel-card.tencent{border-color:rgba(240,192,64,.3)}.channel-card.tencent:hover{border-color:var(--gold);background:rgba(240,192,64,.06)}
+.channel-card.inline{border-color:rgba(108,92,231,.3)}.channel-card.inline:hover{border-color:var(--accent);background:rgba(108,92,231,.06)}
+.channel-card .channel-icon{font-size:32px;margin-bottom:10px}
+.channel-card .channel-name{font-size:16px;font-weight:600;margin-bottom:4px}
+.channel-card.feishu .channel-name{color:var(--teal)}
+.channel-card.tencent .channel-name{color:var(--gold)}
+.channel-card.inline .channel-name{color:var(--accent2)}
+.channel-card .channel-desc{font-size:13px;color:var(--text3);line-height:1.5}
+.channel-card .channel-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;margin-top:8px;font-weight:500}
+.channel-card.feishu .channel-tag{background:rgba(0,184,148,.1);color:var(--teal)}
+.channel-card.tencent .channel-tag{background:rgba(240,192,64,.1);color:var(--gold)}
+.channel-card.inline .channel-tag{background:rgba(108,92,231,.1);color:var(--accent2)}
+
+/* Inline form panel */
+.inline-form-panel{background:var(--bg3);border:1px solid var(--border2);border-radius:16px;padding:32px;margin-top:24px;display:none;animation:modalSlide .3s ease}
+.inline-form-panel.show{display:block}
+.inline-form-panel .inline-form-header{font-size:16px;font-weight:600;color:var(--accent2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.inline-form-panel .inline-form-header::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.form-success{display:none;text-align:center;padding:40px 20px;animation:modalSlide .4s ease}
+.form-success.show{display:block}
+.form-success .success-icon{font-size:64px;margin-bottom:16px}
+.form-success h3{font-size:24px;font-weight:700;margin-bottom:8px;color:var(--gold)}
+.form-success p{font-size:15px;color:var(--text2);line-height:1.6}
+.form-success .success-detail{margin-top:20px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:left}
+.form-success .success-detail .detail-row{display:flex;gap:8px;padding:6px 0;font-size:14px;color:var(--text2)}
+.form-success .success-detail .detail-label{color:var(--accent2);font-weight:500;min-width:80px}
+.form-success .success-contact{margin-top:20px;font-size:14px;color:var(--text3)}
+.form-success .success-contact span{color:var(--gold);font-weight:500}
+
+/* Channel choice modal */
+.channel-modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.75);z-index:1100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.channel-modal-overlay.show{display:flex}
+.channel-modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);max-width:520px;width:95%;position:relative;animation:modalSlide .3s ease;padding:32px}
+.channel-modal .cm-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--bg4);border:1px solid var(--border);color:var(--text2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.channel-modal .cm-close:hover{background:var(--accent);color:#fff}
+.channel-modal h3{font-size:20px;font-weight:700;color:var(--gold);margin-bottom:6px;text-align:center}
+.channel-modal .cm-sub{font-size:14px;color:var(--text3);text-align:center;margin-bottom:24px}
+.cm-channel-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.cm-channel-btn{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:12px;background:var(--bg3);border:2px solid var(--border);transition:all .2s;text-decoration:none;color:var(--text)}
+.cm-channel-btn:hover{transform:translateY(-2px)}
+.cm-channel-btn.feishu-btn{border-color:rgba(0,184,148,.3)}.cm-channel-btn.feishu-btn:hover{border-color:var(--teal);background:rgba(0,184,148,.06)}
+.cm-channel-btn.tencent-btn{border-color:rgba(240,192,64,.3)}.cm-channel-btn.tencent-btn:hover{border-color:var(--gold);background:rgba(240,192,64,.06)}
+.cm-channel-btn.inline-btn{border-color:rgba(108,92,231,.3)}.cm-channel-btn.inline-btn:hover{border-color:var(--accent);background:rgba(108,92,231,.06)}
+.cm-channel-btn .cm-icon{font-size:28px;min-width:32px}
+.cm-channel-btn .cm-text{flex:1}
+.cm-channel-btn .cm-text .cm-name{font-size:16px;font-weight:600;margin-bottom:2px}
+.cm-channel-btn.feishu-btn .cm-name{color:var(--teal)}
+.cm-channel-btn.tencent-btn .cm-name{color:var(--gold)}
+.cm-channel-btn.inline-btn .cm-name{color:var(--accent2)}
+.cm-channel-btn .cm-text .cm-desc{font-size:12px;color:var(--text3)}
+.cm-channel-btn .cm-arrow{font-size:18px;color:var(--text3)}
+
+@media(max-width:768px){
+  .pricing-grid{grid-template-columns:1fr;max-width:400px}
+  .agents-grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-tags{gap:8px}
+  .modal{width:95%;max-height:90vh}
+  .modal-hero{padding:24px 20px 16px}
+  .modal-body{padding:16px 20px 24px}
+  .modal-cta-area{padding:16px 20px}
+  .modal-skill-list{grid-template-columns:1fr}
+  .modal-flow-step{min-width:70px}
+  .form-row{grid-template-columns:1fr}
+  .channel-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .agents-grid{grid-template-columns:1fr}
+  .modal-flow{flex-direction:column}
+  .modal-flow-arrow{display:none}
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>岳永强 个人简介</h1>
 
-        <div class="section">
-            <h2>一、基本信息</h2>
-            <table>
-                <tr>
-                    <td>姓名</td>
-                    <td>岳永强</td>
-                    <td>政治面貌</td>
-                    <td>中共党员</td>
-                </tr>
-                <tr>
-                    <td>学历学位</td>
-                    <td colspan="3">诺曼底管理学院 工商管理博士(DBA,Doctor of Business Administration,法国)</td>
-                </tr>
-                <tr>
-                    <td>公益兼职</td>
-                    <td colspan="3">中国贸促会商业行业委员会"营商环境促进标准化试点"评审专家；中国条码技术与应用协会标准工作委员会专家委员；河南省标准化和质量研究院服务业标准化试点评审专家；河南省人力资源和社会保障厅大众创业导师；平顶山市人力资源和社会保障厅大众创业导师；河南城建学院兼职教师</td>
-                </tr>
-                <tr>
-                    <td>专业资质</td>
-                    <td colspan="3">创业指导师(高级技师)、大数据工程师、国家技术转移技术经纪人、高校成果转化专家</td>
-                </tr>
-            </table>
-        </div>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-badge">人类专家 + AI智能体 · 全链帮办</div>
+<h1>中原<span>帮办</span></h1>
+<p class="hero-sub">博士团队领衔，AI智能体协同，真人调度中枢 —— 从政务服务到标准化申报，让企业专注核心业务</p>
+<div class="hero-tags">
+<span class="hero-tag">河南省大众创业导师</span>
+<span class="hero-tag">物品条码标准化专家</span>
+<span class="hero-tag">国家技术经纪人</span>
+<span class="hero-tag">标准化博士团队</span>
+<span class="hero-tag">营商环境评审专家</span>
+</div>
+<div class="hero-cta">
+<a href="#agents" class="btn btn-primary">选择智能体 →</a>
+<a href="#form" class="btn btn-outline">直接提交需求</a>
+</div>
+</div>
+</section>
 
-        <div class="section">
-            <h2>二、个人优势</h2>
-            <p>复合型标准化人才，兼具博士学历、国家级标准专家资质、省级创业导师称号及高新区一线行政经验。</p>
-            <p>学术理论与产业实践贯通。博士论文《影响科技型中小企业创新因素分析--以平顶山为例》直接服务本地企业发展，将系统研究方法论与高新区科技型企业创新实践融合，形成"理论研究-企业诊断-政策建议"闭环。标准研制与评审权威贯通。既担任标准主起草人参与国家规则制定，又承担国家级试点评审专家职责，掌握"研-编-审-用-评"全链条能力，在全国标准化领域具备话语权。国家级资源与地方发展贯通。深度绑定中国贸促会商业行业委员会、中国条码技术与应用协会等国家级标准化服务平台，同时扎根高新区一线，熟悉区情企情，能够快速将国家级资源转化为地方发展动能。</p>
-        </div>
+<section class="section">
+<div class="container">
+<div class="section-label">痛点共鸣</div>
+<h2>中小企业<span>50%</span>的时间<br>耗在行政事务上</h2>
+<p class="section-desc">从个人创意到开办企业，从填报资料到工商税务登记，从流程申报到补贴申领，从证照办理到项目申报，从专利申请到标准研制 —— 繁杂的行政与合规事务，吞噬了企业最宝贵的时间与精力。</p>
+<div class="problem-grid">
+<div class="problem-card"><div class="icon">📋</div><h3>政务流程迷宫</h3><p>609份材料、111类证照、25个表单……企业办一件事要跑3-5个窗口</p></div>
+<div class="problem-card"><div class="icon">📐</div><h3>标准化门槛高</h3><p>团体标准、地方标准、国家标准 —— 从立项到发布至少6个月，99%的企业不知道怎么参与</p></div>
+<div class="problem-card"><div class="icon">💡</div><h3>项目申报无从下手</h3><p>高新企业认定、专精特新、质量奖……每个条线不同要求，错过窗口等一年</p></div>
+<div class="problem-card"><div class="icon">🧭</div><h3>创业孵化缺指导</h3><p>从注册到高企认定，从大赛辅导到成果转化 —— 创业者需要全链陪跑</p></div>
+</div>
+</div>
+</section>
 
-        <div class="section">
-            <h2>三、标准化领域业绩</h2>
-            <h3>（一）国家级标准化试点：实现高新区"零的突破"</h3>
-            <p>促成并深度参与中国贸促会商业行业委员会申报的第九批社会管理和公共服务综合标准化试点项目:"中国国际贸易促进委员会商业行业委员会营商环境监测与企业综合服务标准化试点"，成功申报平顶山高新区成为全国首批营商环境监测站单位。</p>
-            <p>促成高新区成为全国第一批"营商环境促进标准化试点"单位(参与评审)--实现高新区在国家级标准化试点领域的突破。</p>
+<section class="section team-section" id="team">
+<div class="container">
+<div class="team-header">
+<div class="section-label">团队结构</div>
+<h2>博士团队<span> + AI 业务智能体</span></h2>
+<p class="section-desc" style="text-align:center">3位博士/专家领衔 + AI处理80%标准化工作 + 真人介入20%关键节点。</p>
+</div>
+<div class="team-grid">
+<div class="team-member human"><div class="avatar">博</div><div class="name">博士团队</div><div class="role">真人调度 · 董事长</div><div class="star">★★★★★</div></div>
+<div class="team-member ai"><div class="avatar">E</div><div class="name">CEO Agent</div><div class="role">意图理解 · 任务分解 · 派单</div></div>
+<div class="team-member ai"><div class="avatar">标</div><div class="name">标准化 Agent</div><div class="role">标准研制 · 试点申报</div><div class="star">★★★★★</div></div>
+<div class="team-member ai"><div class="avatar">营</div><div class="name">营商环境 Agent</div><div class="role">试点评审 · 政策评估</div><div class="star">★★★★★</div></div>
+<div class="team-member ai"><div class="avatar">校</div><div class="name">校企合作国际专家</div><div class="role">ISO中方专家 · 创业导师</div><div class="star">★★★★</div></div>
+<div class="team-member ai"><div class="avatar">标</div><div class="name">标准化专家</div><div class="role">食品标准化 · 加拿大访问学者</div><div class="star">★★★★</div></div>
+</div>
+</div>
+</section>
 
-            <h3>（二）河南省标准化示范项目：主办申报落地高新区</h3>
-            <p>主办申报河南省服务业标准化示范项目:"平顶山市高新区数字营商环境服务标准化试点"，为高新区争取省级政策资源与品牌效应。</p>
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<div class="container">
+<div class="section-label" style="text-align:center">如何使用</div>
+<h2 style="text-align:center">三步<span>启动帮办</span></h2>
+<p class="section-desc" style="text-align:center;margin:0 auto 48px">点击下方任一智能体卡片，查看它能帮你做什么，选择套餐，立即开始。</p>
+<div class="howto-grid">
+<div class="howto-card"><div class="howto-num">01</div><h3>选择智能体</h3><p>在下方智能体矩阵中，点击你需要的业务领域卡片</p></div>
+<div class="howto-card"><div class="howto-num">02</div><h3>查看详情</h3><p>弹窗展示：能力加持、可办业务、使用流程、适用套餐</p></div>
+<div class="howto-card"><div class="howto-num">03</div><h3>提交需求</h3><p>填写联系方式和业务需求，博士团队24小时内跟进</p></div>
+</div>
+</div>
+</section>
 
-            <h3>（三）国家级团体标准研制：参与多层级规则制定</h3>
-            <ul>
-                <li>受中国贸促会商业行业委员会邀请，参与国家级团体标准 T/CCPITCSC 174-2025《产业园区营商环境公共服务评价指标》、 T/CCPITCSC-JH2024289《政务诚信评价通用指标》、T/CCPITCSC 175 -2025《县区营商环境服务能力建设指南》、T/CCPITCSC 144-2024 低空经济营商环境法治保障评估指南等团体标准技术审定</li>
-                <li>应中国条码技术与应用协会邀请，以专家委员身份参加团体标准 T/CABC 18.1-2025《条码师岗位能力要求》(中、英文两版本)技术审查，参与国家级团体标准《条码师岗位能力评价要求》立项审查</li>
-                <li>参与多项地方标准研制及征求意见。主起草河南省地方标准 《GS1 系统在绿色城配领域的应用规范》，入围立项审查并参与答辩</li>
-            </ul>
+<section class="section" id="agents">
+<div class="container">
+<div class="section-label">业务智能体</div>
+<h2>点击智能体，<span>查看能帮你做什么</span></h2>
+<p class="section-desc">每个智能体背后都有博士团队的能力加持。★越多，真人介入深度越大。点击卡片查看详情。</p>
+<div class="agent-filter">
+<button class="agent-filter-btn active" data-filter="all">全部</button>
+<button class="agent-filter-btn" data-filter="tier-5">★★★★★ 核心优势</button>
+<button class="agent-filter-btn" data-filter="tier-4">★★★★ 深度经验</button>
+<button class="agent-filter-btn" data-filter="tier-3">★★★ 基础服务</button>
+</div>
+<div class="agents-grid" id="agentsGrid">
+<div class="agent-card tier-5" data-agent="standardization"><div class="agent-icon">📐</div><div class="agent-name">标准化</div><div class="agent-desc">标准研制·试点培育·试点申报</div><div class="agent-stars">★★★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-5" data-agent="business-env"><div class="agent-icon">🏛</div><div class="agent-name">营商环境</div><div class="agent-desc">贸促会评审专家·全国首批试点·42家验收评审</div><div class="agent-stars">★★★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-4" data-agent="gov-service"><div class="agent-icon">📋</div><div class="agent-name">政务服务</div><div class="agent-desc">个人企业事项·高频办理·帮办代办</div><div class="agent-stars">★★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-5" data-agent="project-apply"><div class="agent-icon">📌</div><div class="agent-name">项目申报</div><div class="agent-desc">企业服务部部长·孵化器B级晋升·高企认定</div><div class="agent-stars">★★★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-5" data-agent="competition"><div class="agent-icon">🏆</div><div class="agent-name">大赛辅导</div><div class="agent-desc">创新创业大赛·物品编码大赛·互联网+</div><div class="agent-stars">★★★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-4" data-agent="opc-incubation"><div class="agent-icon">🚀</div><div class="agent-name">OPC孵化</div><div class="agent-desc">一人公司·高企认定·创业指导师</div><div class="agent-stars">★★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-4" data-agent="digital-product"><div class="agent-icon">📱</div><div class="agent-name">产品数字化</div><div class="agent-desc">产品条码·传感器·车载终端·数字化平台</div><div class="agent-stars">★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-4" data-agent="patent"><div class="agent-icon">📝</div><div class="agent-name">专利申报</div><div class="agent-desc">3项发明专利·百余项企业标准·国家技术经纪人</div><div class="agent-stars">★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-4" data-agent="certification"><div class="agent-icon">🎓</div><div class="agent-name">培训考证</div><div class="agent-desc">条码师岗位能力·人工智能·职业资格</div><div class="agent-stars">★★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-3" data-agent="ecommerce"><div class="agent-icon">🛒</div><div class="agent-name">电商合规</div><div class="agent-desc">GS1系统规范·出海合规·产品溯源</div><div class="agent-stars">★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-3" data-agent="trade-compliance"><div class="agent-icon">🌐</div><div class="agent-name">外贸合规</div><div class="agent-desc">GS1编码·UDI医疗识别·DPP数字产品护照</div><div class="agent-stars">★★</div><div class="agent-click-hint">点击查看 →</div></div>
+<div class="agent-card tier-3" data-agent="energy-saving"><div class="agent-icon">⚡</div><div class="agent-name">用电节约</div><div class="agent-desc">容改需降本·电力可视化·算法节能减排</div><div class="agent-stars">★</div><div class="agent-click-hint">点击查看 →</div></div>
+</div>
+</div>
+</section>
 
-            <h3>（四）国家级标准化试点评审：以专家身份服务全国</h3>
-            <p>作为中国贸促会商业行业委员会"营商环境促进标准化试点"评审专家，参与全国56 个试点单位材料审核，推动全国第一批42 家、 第二批7 家单位通过验收，积累了可复制、可推广的试点建设经验。</p>
+<section class="section pricing-section" id="pricing">
+<div class="container">
+<div class="section-label" style="text-align:center">选择套餐</div>
+<h2 style="text-align:center"><span>299</span> / <span>999</span> / <span>9999</span></h2>
+<p class="section-desc" style="text-align:center;margin:0 auto 48px">按业务复杂度阶梯收费。AI处理标准化工作，真人介入关键节点。</p>
+<div class="pricing-grid">
+<div class="pricing-card">
+<div class="tier-name">轻量咨询</div><div class="tier-sub">适合流程查询、政策匹配</div>
+<div class="price">¥299<span>/次</span></div><div class="price-unit">单点答疑 + 模板提供</div>
+<ul><li>AI智能问答，即时响应</li><li>政策/流程精准匹配</li><li>标准材料清单生成</li><li>表单模板一键下载</li><li>政务/培训考证/标准化基础咨询</li></ul>
+<div class="human-badge low">真人介入 0% · 纯AI</div>
+<a href="#form" class="btn btn-outline" style="display:block;margin-top:16px">¥299 提交需求 →</a>
+</div>
+<div class="pricing-card featured">
+<div class="tier-name">深度代办</div><div class="tier-sub">适合项目申报、标准研制</div>
+<div class="price">¥999<span>/次</span></div><div class="price-unit">全流程托管 + 真人复核</div>
+<ul><li>AI生成全套申报材料</li><li>流程导航 + 进度跟踪</li><li>1次真人关键节点复核</li><li>属地政策适配（河南/平顶山）</li><li>项目申报/专利/OPC孵化</li></ul>
+<div class="human-badge mid">真人介入 20% · 关键复核</div>
+<a href="#form" class="btn btn-primary" style="display:block;margin-top:16px">¥999 提交需求 →</a>
+</div>
+<div class="pricing-card">
+<div class="tier-name">战略陪跑</div><div class="tier-sub">适合标准化试点、营商环境</div>
+<div class="price">¥9999<span>/月</span></div><div class="price-unit">AI全程 + 每周真人跟进</div>
+<ul><li>AI 24/7 全程在线</li><li>真人每周1次深度跟进</li><li>资源对接 + 人脉桥梁</li><li>标准研制/试点申报全程陪跑</li><li>大赛辅导/营商环境深度服务</li></ul>
+<div class="human-badge high">真人介入 50%+ · 深度陪跑</div>
+<a href="#form" class="btn btn-outline" style="display:block;margin-top:16px">¥9999 提交需求 →</a>
+</div>
+</div>
+</div>
+</section>
 
-            <h3>（五）产学研融合与标准化人才培养</h3>
-            <p>联合河南城建学院、中国贸促会商业行业委员会申报全国高校"全国专业与标准化教育融合试点"，打造高校标准化实训基地；助力河南城建学院申报河南省服务业标准化试点项目"AI+标准化"科普与产教融合实训服务标准化试点。</p>
-            <p>竞赛辅导成果突出：2025 年全国物品编码与自动识别大赛：辅导的大学生中，2 名学生全国一等奖，3 名学生全国三等奖；指导高校大学生入围河南省高等职业教育技能大赛(世界技能大赛)物流与供应链赛道。</p>
-        </div>
+<section class="section form-section" id="form">
+<div class="container">
+<div class="section-label" style="text-align:center">提交需求</div>
+<h2 style="text-align:center">选择您习惯的方式，<span>团队即刻响应</span></h2>
+<p class="section-desc" style="text-align:center;margin:0 auto 40px">三种提交通道，任选其一 —— 无需注册账号即可提交。博士团队将在24小时内跟进。</p>
 
-        <div class="section">
-            <h2>四、在平顶山高新区的工作实绩</h2>
-            <p>高新区机制体制改革以来，本人长期在高新区一线工作，通过公开招聘入职高新区临港物流产业园区项目建设与企业服务部部长，二次改革后入职高新区行政服务中心。</p>
-            <table>
-                <tr>
-                    <th>领域</th>
-                    <th>具体业绩</th>
-                </tr>
-                <tr>
-                    <td>科技企业孵化</td>
-                    <td>推动平顶山高新技术创业服务中心国家级科技企业孵化器晋升B 级，孵化多家国家高新技术企业、科技型中小企业</td>
-                </tr>
-                <tr>
-                    <td>创业指导</td>
-                    <td>给高新区上百企业做创业指导，被平顶山市人社局选聘为平顶山市大众创业导师、河南省人社厅选聘为河南省大众创业导师</td>
-                </tr>
-                <tr>
-                    <td>创新创业大赛辅导</td>
-                    <td>申报第一届中国营商环境数字创新大赛荣获一等奖，辅导多家高新区企业参加科技部主导的创新创业大赛、省人社厅主导的豫创天下大赛，辅导多家企业参与中国创新创业大赛并获奖</td>
-                </tr>
-                <tr>
-                    <td>团体标准起草与评审</td>
-                    <td>参与《营商环境企业满意度通用评价指南》起草，以专家身份评审《政务诚信评价通用指标》，以上标准高新区已获得证书</td>
-                </tr>
-                <tr>
-                    <td>标准化试点申报与评审</td>
-                    <td>被河南省标准化和质量研究院聘为标准化专家，以高新区行政服务中心为申报单位申报河南省服务业标准化试点。被中国贸促会商业行业委员会聘为全国“营商环境促进标准化试点”评审专家，指导高新区通过国家级试点项目评审验收</td>
-                </tr>
-                <tr>
-                    <td>课题研究</td>
-                    <td>参与河南省标准化和质量研究院在平顶山高新区联合申报的《GS1 系统在绿色城配领域应用研究》国家级课题研究</td>
-                </tr>
-                <tr>
-                    <td>营商环境建设</td>
-                    <td>申报中国营商环境监测站，成为平顶山市唯一全国首批营商环境监测站</td>
-                </tr>
-            </table>
-        </div>
+<div class="channel-grid">
+<a href="https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS&view=vewfjmeAoR" target="_blank" rel="noopener" class="channel-card feishu">
+<div class="channel-icon">🦅</div>
+<div class="channel-name">飞书表单</div>
+<div class="channel-desc">跳转飞书在线表单填写，适合飞书用户</div>
+<div class="channel-tag">无需登录飞书</div>
+</a>
+<a href="https://docs.qq.com/form/page/DSUhTUk9ob1NneGNo" target="_blank" rel="noopener" class="channel-card tencent" id="tencentDocLink">
+<div class="channel-icon">📄</div>
+<div class="channel-name">腾讯文档</div>
+<div class="channel-desc">跳转腾讯文档收集表填写，微信/QQ用户首选</div>
+<div class="channel-tag">微信即可填写</div>
+</a>
+<button class="channel-card inline" onclick="showInlineForm()">
+<div class="channel-icon">✍️</div>
+<div class="channel-name">在线填写</div>
+<div class="channel-desc">直接在网页内填写，无需跳转任何平台</div>
+<div class="channel-tag">最便捷</div>
+</button>
+</div>
 
-        <div class="section">
-            <h2>五、履职设想与发展规划</h2>
-            <h3>（一）标准化项目应用与推广</h3>
-            <p>依托多年在标准化领域的深耕积累，推动国家标准、行业标准研制成果转化为区域产业发展动能，重点推进营商环境标准化、信息技术服务标准化在高新区主导产业中的深度应用，构建"标准研制-试点建设-产业赋能"闭环。</p>
+<!-- Inline form panel -->
+<div class="inline-form-panel" id="inlineFormPanel">
+<div class="inline-form-header">在线提交需求</div>
+<div class="form-container">
+<div class="form-row">
+<div class="form-group"><label>姓名<span class="required-dot">*</span></label><input type="text" id="inlineName" placeholder="请输入姓名" required></div>
+<div class="form-group"><label>手机号<span class="required-dot">*</span></label><input type="tel" id="inlinePhone" placeholder="请输入手机号" required></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label>企业名称</label><input type="text" id="inlineCompany" placeholder="请输入企业名称（选填）"></div>
+<div class="form-group"><label>所在城市</label><input type="text" id="inlineCity" placeholder="如：平顶山（选填）"></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label>选择智能体</label><select id="inlineAgent"><option value="">-- 请选择 --</option><option value="标准化">标准化</option><option value="营商环境">营商环境</option><option value="政务服务">政务服务</option><option value="项目申报">项目申报</option><option value="大赛辅导">大赛辅导</option><option value="OPC孵化">OPC孵化</option><option value="产品数字化">产品数字化</option><option value="专利申报">专利申报</option><option value="培训考证">培训考证</option><option value="电商合规">电商合规</option><option value="外贸合规">外贸合规</option><option value="用电节约">用电节约</option></select></div>
+<div class="form-group"><label>选择套餐</label><select id="inlineTier"><option value="">-- 请选择 --</option><option value="¥299 轻量咨询">¥299 轻量咨询</option><option value="¥999 深度代办">¥999 深度代办</option><option value="¥9999 战略陪跑">¥9999 战略陪跑</option></select></div>
+</div>
+<div class="form-row single">
+<div class="form-group"><label>业务需求描述</label><textarea id="inlineDesc" placeholder="请简要描述您的业务需求……"></textarea></div>
+</div>
+<div class="form-submit-area">
+<button class="btn btn-gold" style="padding:16px 48px;font-size:17px" onclick="submitInlineForm()">提交需求</button>
+<p style="font-size:12px;color:var(--text3);margin-top:12px">提交后博士团队将在24小时内联系您 · 信息仅用于业务沟通，绝不外泄</p>
+</div>
+</div>
+</div>
 
-            <h3>（二）标准化人才培养</h3>
-            <p>贯彻《国家标准化发展纲要》及省、市标准化工作部署，发挥自身标准化实践经验和国家级平台资源优势，为高新区培养懂标准、用标准、管标准的复合型人才。</p>
+<!-- Success state -->
+<div class="form-success" id="formSuccess">
+<div class="success-icon">✅</div>
+<h3>需求已提交！</h3>
+<p>博士团队将在24小时内通过您留下的联系方式跟进。</p>
+<div class="success-detail" id="successDetail"></div>
+<div class="success-contact">如有紧急需求，请直接联系：<span>博士团队邮箱 674348396@qq.com</span></div>
+</div>
 
-            <h3>（三）创业孵化指导及竞赛辅导</h3>
-            <p>OPC(一人公司)创业孵化与AI 智能体服务。OPC(One Person Company)并非传统个体户，而是一个人指挥AI 机器人集群、人机协作完成项目的全新组织形态。人工智能本质是标准化，将事项标准化、流程化、规模化，与本人专业优势高度契合。</p>
-            <p>依托河南城建学院标准化博士团队，联合高新区高投集团及高校，共建OPC(一人公司)创业孵化平台，打造"人机协作"新型创业模式。发挥省、市大众创业导师及高校兼职教师的双重身份优势，持续开展职业技能竞赛辅导与创新创业指导，为高新区储备智力资源。同时，在高新区率先推广OPC 项目，让区内企业和创业者优先享受人机共存的技术红利，以AI 赋能主导产业高质量发展。</p>
-        </div>
-    </div>
+<div class="form-redirect-alt">
+<p>如有紧急需求，请直接联系：</p>
+<p style="font-weight:600;color:var(--gold)">博士团队邮箱 674348396@qq.com</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-label">成功案例</div>
+<h2>实战验证，<span>不是纸上谈兵</span></h2>
+<p class="section-desc">每一个案例背后，都是博士团队亲自参与或主导的真实业务。</p>
+<div class="cases-grid">
+<div class="case-card"><div class="case-tag">营商环境 · 国家级</div><h3>全国首批营商环境监测站</h3><p>促成平顶山高新区成为全国首批营商环境促进标准化试点单位。</p></div>
+<div class="case-card"><div class="case-tag">标准化 · 团体标准</div><h3>T/CCPITCSC 145-2024 营商环境满意度评价指南</h3><p>主起草人之一，联合编撰团标，应邀参加服贸会。</p></div>
+<div class="case-card"><div class="case-tag">标准化 · 条码标准</div><h3>T/CABC 18.1-2025 条码工程师岗位能力要求</h3><p>填补我国条码专业人才能力评价标准空白，老挝也将推行。</p></div>
+<div class="case-card"><div class="case-tag">大赛 · 一等奖</div><h3>营商环境数字创新大赛一等奖</h3><p>辅导2名学生获全国编码大赛一等奖、3名获三等奖。</p></div>
+<div class="case-card"><div class="case-tag">孵化 · 科技企业</div><h3>国家级孵化器晋升B级</h3><p>将创业服务中心晋升B级，孵化多家国家高新技术企业。</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-label">博士团队经历</div>
+<h2>3位博士/专家<span> · 产学研贯通</span></h2>
+<p class="section-desc">平顶山标准化博士团队，由3名专家学者自发创建，开展标准化人才培养、大赛辅导、项目实践应用与推广等公益活动。</p>
+<div class="timeline">
+<div class="timeline-item"><div class="year">校企合作国际专家</div><div class="event">ISO/TC286 WG4 中方专家</div><div class="detail">河南城建学院大学科技园主任 · 河南省人社厅创业导师 · 人社部高级就业创业指导师 · 国家技术转移中级技术经纪人 · 主持科研项目20余项 · 发明专利2项</div></div>
+<div class="timeline-item"><div class="year">标准化专家</div><div class="event">加拿大访问学者 · 食品标准化专家</div><div class="detail">河南省市场监督管理局标准化专家 · 河南省教育厅学术技术带头人 · 河南省优秀教师 · 平顶山市拔尖人才 · 发明专利3项+实用新型10项 · 参与制定企业标准2项</div></div>
+<div class="timeline-item"><div class="year">DBA博士 · 评审专家</div><div class="event">DBA博士 · 标准化评审专家</div><div class="detail">中国贸促会营商环境标准化试点评审专家 · 中国条码技术与应用协会专家委员 · 河南省标准化和质量研究院评审专家 · 团标3项·国标参编·试点评审49项·企业标准百余项</div></div>
+<div class="timeline-item"><div class="year">2025</div><div class="event">团队成果：标准化公益活动256人次</div><div class="detail">培养5名优秀大学生荣获国家标准化人才奖项 · 编码大赛2人一等奖·3人三等奖</div></div>
+<div class="timeline-item"><div class="year">2025</div><div class="event">营商环境数字创新大赛一等奖</div><div class="detail">申报第一届中国营商环境数字创新大赛并荣获一等奖</div></div>
+<div class="timeline-item"><div class="year">2026</div><div class="event">中原帮办 · 博士团队领衔</div><div class="detail">博士团队董事长 + AI智能体，商业全链帮办代办系统</div></div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--border)">
+<div class="container">
+<div class="section-label">权威背书</div>
+<h2>官方认证，<span>真实可查</span></h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:32px">
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center"><div style="font-size:14px;font-weight:600;margin-bottom:4px">中国贸促会</div><div style="font-size:12px;color:var(--text3)">营商环境促进标准化试点<br>评审专家</div></div>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center"><div style="font-size:14px;font-weight:600;margin-bottom:4px">中国条码技术协会</div><div style="font-size:12px;color:var(--text3)">标准工作委员会<br>专家委员</div></div>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center"><div style="font-size:14px;font-weight:600;margin-bottom:4px">河南省标准化和质量研究院</div><div style="font-size:12px;color:var(--text3)">服务业标准化试点<br>评审专家</div></div>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center"><div style="font-size:14px;font-weight:600;margin-bottom:4px">河南省人社厅</div><div style="font-size:12px;color:var(--text3)">河南省大众创业导师</div></div>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center"><div style="font-size:14px;font-weight:600;margin-bottom:4px">中国商业联合会</div><div style="font-size:12px;color:var(--text3)">创业指导师（高级技师）</div></div>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center"><div style="font-size:14px;font-weight:600;margin-bottom:4px">河南省市场监督管理局</div><div style="font-size:12px;color:var(--text3)">标准化专家</div></div>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center"><div style="font-size:14px;font-weight:600;margin-bottom:4px">国家技术转移</div><div style="font-size:12px;color:var(--text3)">国家技术经纪人</div></div>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center"><div style="font-size:14px;font-weight:600;margin-bottom:4px">河南城建学院</div><div style="font-size:12px;color:var(--text3)">校企合作 · 产教融合</div></div>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>让<span>中原帮办</span>帮你<br>跑完行政事务全链条</h2>
+<p>博士团队 + AI智能体，7×24在线。</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<a href="#form" class="btn btn-primary">选择方式提交需求 →</a>
+<a href="#pricing" class="btn btn-outline">查看套餐</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>中原帮办 · 商业全链帮办代办系统 · 由平顶山标准化博士团队领衔</p>
+<p style="margin-top:8px;font-size:12px;color:var(--text3)">© 2026 中原帮办 · 保留所有权利</p>
+</div>
+</footer>
+
+<!-- Modal -->
+<div class="modal-overlay" id="agentModal">
+<div class="modal" id="modalContent">
+<button class="modal-close" id="modalClose">✕</button>
+<div class="modal-hero" id="modalHero"></div>
+<div class="modal-body" id="modalBody"></div>
+<div class="modal-cta-area" id="modalCta"></div>
+</div>
+</div>
+
+<script>
+const agentsData = {
+  standardization: {
+    icon: '📐', name: '标准化', stars: '★★★★★',
+    subtitle: '标准研制 · 标准化试点培育 · 标准化试点申报',
+    advantage: { title: '博士团队最强领域 —— 参与标准研制+试点培育申报全链服务', text: '中国贸促会营商环境促进标准化试点评审专家 + 中国条码技术与应用协会标准工作委员会专家委员 + 河南省标准化和质量研究院评审专家。主参与研制团体标准3项、地方标准1项、企业标准百余项。评审国家级团体标准7项、标准化试点49个。提供从标准研制到试点培育、试点申报的全链条标准化服务。' },
+    skills: [
+      { name: '标准研制', desc: '团体标准、地方标准、企业标准起草编撰' },
+      { name: '标准化试点培育', desc: '帮助企业/园区培育标准化试点项目' },
+      { name: '标准化试点申报', desc: '国家级/省级服务业标准化试点项目申报' },
+      { name: '标准评审', desc: '国家级团体标准技术审查、立项审查' },
+      { name: '标准征求意见', desc: '深度参与标准征求意见，提出修改建议' },
+      { name: '课题研究', desc: 'GS1系统在绿色城配领域应用研究等' }
+    ],
+    tiers: ['tier-999', 'tier-9999'],
+    flow: [{ num:'1',text:'需求诊断' },{ num:'2',text:'标准立项' },{ num:'3',text:'草案起草' },{ num:'4',text:'征求意见' },{ num:'5',text:'技术审查' },{ num:'6',text:'发布宣贯' }]
+  },
+  'business-env': {
+    icon: '🏛', name: '营商环境', stars: '★★★★★',
+    subtitle: '营商环境评估 · 试点评审 · 政策咨询 · 区域对比',
+    advantage: { title: '博士团队国家级营商环境评审专家 —— 全国首批42家验收评审', text: '作为中国贸促会商业行业委员会营商环境促进标准化试点评审专家，全程参与全国第一批42家单位验收评审和第二批7家单位验收。主起草T/CCPITCSC 145-2024营商环境满意度评价指南团标。参与产业园区营商环境公共服务评价指标、政务诚信评价通用指标等标准审定。促成平顶山高新区成为全国首批营商环境监测站。' },
+    skills: [
+      { name: '营商环境评估', desc: '企业满意度评价、政务诚信评价、服务能力建设' },
+      { name: '标准化试点申报', desc: '国家级营商环境促进标准化试点项目申报' },
+      { name: '试点评审指导', desc: '49个国家级试点评审经验，可辅导迎检' },
+      { name: '政策环境咨询', desc: '区域营商环境对比、政策收益测算' },
+      { name: '监测站申报', desc: '全国营商环境监测站申报经验' },
+      { name: '数字营商环境', desc: '数字营商环境服务标准化试点主办经验' }
+    ],
+    tiers: ['tier-999', 'tier-9999'],
+    flow: [{ num:'1',text:'现状诊断' },{ num:'2',text:'对标评估' },{ num:'3',text:'试点申报' },{ num:'4',text:'体系构建' },{ num:'5',text:'验收迎检' },{ num:'6',text:'持续改进' }]
+  },
+  'gov-service': {
+    icon: '📋', name: '政务服务', stars: '★★★★',
+    subtitle: '个人企业办理事项 · 高频办理事项 · 帮办代办',
+    advantage: { title: '博士团队行政服务中心一线实操 —— 帮你快速找到办理入口', text: '在行政服务中心工作多年，熟悉所有个人和企业可办理事项、高频办理事项。帮助企业快速找到事项办理入口，通过帮办代办服务提高办事效率。知道企业办一件事要跑哪些窗口、填哪些表、带哪些材料。' },
+    skills: [
+      { name: '事项查询', desc: '所有个人和企业可办理事项精准检索' },
+      { name: '高频事项办理', desc: '高频办理事项快速匹配办理入口' },
+      { name: '帮办代办', desc: '代跑窗口、代填表单、代交材料' },
+      { name: '材料清单', desc: '自动生成所需材料清单和模板' },
+      { name: '办理进度跟踪', desc: '从提交到办结全程跟踪提醒' },
+      { name: '属地适配', desc: '河南省/平顶山市本地政策和窗口经验' }
+    ],
+    tiers: ['tier-299', 'tier-999'],
+    flow: [{ num:'1',text:'需求描述' },{ num:'2',text:'政策匹配' },{ num:'3',text:'材料准备' },{ num:'4',text:'提交办理' },{ num:'5',text:'进度跟踪' },{ num:'6',text:'办结交付' }]
+  },
+  'project-apply': {
+    icon: '📌', name: '项目申报', stars: '★★★★★',
+    subtitle: '高企认定 · 专精特新 · 质量奖 · 科技项目',
+    advantage: { title: '博士团队曾任企业服务部长 —— 你就是做这个的人', text: '在物流园区担任企业服务部长，将国家级科技企业孵化器晋升B级，孵化多家国家高新技术企业。培育研发项目300万，促成技术成果登记900万。推动高校科研成果在企业转化。' },
+    skills: [
+      { name: '项目匹配', desc: '自动匹配适合申报的政府项目' },
+      { name: '申报书起草', desc: 'AI生成全套申报材料+真人复核' },
+      { name: '绩效指标设计', desc: '项目KPI指标体系规划' },
+      { name: '答辩问答库', desc: '模拟答辩场景，生成问答库' },
+      { name: '高企认定辅导', desc: '从材料准备到认定通过全程' },
+      { name: '成果转化对接', desc: '高校科研成果对接企业转化' }
+    ],
+    tiers: ['tier-999', 'tier-9999'],
+    flow: [{ num:'1',text:'需求评估' },{ num:'2',text:'项目匹配' },{ num:'3',text:'材料生成' },{ num:'4',text:'真人复核' },{ num:'5',text:'提交申报' },{ num:'6',text:'答辩辅导' }]
+  },
+  competition: {
+    icon: '🏆', name: '大赛辅导', stars: '★★★★★',
+    subtitle: '大学生创新创业大赛 · 物品编码大赛 · 互联网+大赛',
+    advantage: { title: '博士团队辅导获奖无数 —— 一等奖是常态', text: '辅导企业参与中国创新创业大赛多次获奖；指导大学生参加世界技能大赛并入围；辅导全国编码大赛2人一等奖、3人三等奖；申报营商环境数字创新大赛并荣获一等奖。校企合作国际专家担任中国创新创业大赛、挑战杯创青春等多个赛事评审专家。专注大学生创新创业大赛、全国物品编码大赛、互联网+大赛咨询辅导。' },
+    skills: [
+      { name: '创新创业大赛辅导', desc: '大学生创新创业大赛咨询辅导' },
+      { name: '物品编码大赛辅导', desc: '全国物品编码大赛咨询辅导' },
+      { name: '互联网+大赛辅导', desc: '互联网+大赛咨询辅导' },
+      { name: '商业计划书', desc: 'BP撰写+路演PPT生成' },
+      { name: '路演辅导', desc: '模拟路演问答+演讲稿优化' },
+      { name: '答辩训练', desc: '评委视角模拟答辩场景' }
+    ],
+    tiers: ['tier-999', 'tier-9999'],
+    flow: [{ num:'1',text:'赛事选择' },{ num:'2',text:'BP撰写' },{ num:'3',text:'PPT制作' },{ num:'4',text:'路演训练' },{ num:'5',text:'答辩辅导' },{ num:'6',text:'赛后对接' }]
+  },
+  'opc-incubation': {
+    icon: '🚀', name: 'OPC孵化', stars: '★★★★',
+    subtitle: '一人公司 · 从0到1创业 · 注册公司 · 税务筹划',
+    advantage: { title: '博士团队真正的"一人公司"实践者 —— 我走过的路帮你避坑', text: '持有创业指导师（高级技师）证书，河南省人社厅认证大众创业导师。校企合作国际专家为ISO中方专家+人社部高级就业创业指导师+河南省科技厅创新创业导师。团队将国家级孵化器晋升B级。' },
+    skills: [
+      { name: '商业模式画布', desc: '从0到1商业模式设计' },
+      { name: '注册公司指导', desc: '工商注册+税务登记+社保开户' },
+      { name: '高企认定辅导', desc: '高企认定全流程辅导经验' },
+      { name: '定价策略', desc: '产品定价和商业模式优化' },
+      { name: 'AI工作流设计', desc: '一人公司模式下的AI自动化替代' },
+      { name: '融资对接', desc: '天使轮/种子轮融资辅导' }
+    ],
+    tiers: ['tier-999', 'tier-9999'],
+    flow: [{ num:'1',text:'创业诊断' },{ num:'2',text:'模式设计' },{ num:'3',text:'注册落地' },{ num:'4',text:'产品打磨' },{ num:'5',text:'市场获取' },{ num:'6',text:'认定申报' }]
+  },
+  'digital-product': {
+    icon: '📱', name: '产品数字化', stars: '★★★',
+    subtitle: '产品条码 · 传感器 · 车载终端 · 数字化系统平台',
+    advantage: { title: '博士团队产品数字化全品类服务 —— 从编码到平台一站式', text: '参与GS1系统在绿色城配领域标准研制，主持编码质量提升专项培训。按产品条码、传感器、车载终端、数字化系统平台四大品类提供产品数字化服务，覆盖从编码注册到系统平台搭建的全流程。' },
+    skills: [
+      { name: '产品条码', desc: 'GS1条码/二维码注册、编码、应用' },
+      { name: '传感器', desc: '传感器产品选型、编码、数字化方案' },
+      { name: '车载终端', desc: '车载终端产品数字化、编码注册、标准对接' },
+      { name: '数字化系统平台', desc: '企业数字化系统平台设计与搭建' },
+      { name: '供应链数字化', desc: '从生产到物流的数字化闭环' }
+    ],
+    tiers: ['tier-299', 'tier-999'],
+    flow: [{ num:'1',text:'需求梳理' },{ num:'2',text:'方案设计' },{ num:'3',text:'开发交付' },{ num:'4',text:'编码注册' },{ num:'5',text:'上线运营' }]
+  },
+  patent: {
+    icon: '📝', name: '专利申报', stars: '★★★',
+    subtitle: '发明专利 · 实用新型 · 外观专利 · 软著',
+    advantage: { title: '博士团队3项发明专利+百余项企业标准+国家技术经纪人', text: '团队拥有3项发明专利。持有国家技术转移技术经纪人证书和高校成果转化专家证书。标准化专家拥有发明专利3项+实用新型10项。校企合作国际专家拥有发明专利2项。团队起草编撰或指导企业制定企业标准百十余项。知道专利挖掘→申请→授权全流程。' },
+    skills: [
+      { name: '专利挖掘', desc: '从技术成果中挖掘可专利点' },
+      { name: '技术交底书', desc: '专利技术交底书撰写' },
+      { name: '权利要求书', desc: '权利要求和说明书起草' },
+      { name: '软著申请', desc: '软件著作权登记申请' },
+      { name: '代理对接', desc: '对接专利代理机构和审查流程' }
+    ],
+    tiers: ['tier-299', 'tier-999'],
+    flow: [{ num:'1',text:'成果梳理' },{ num:'2',text:'专利挖掘' },{ num:'3',text:'交底撰写' },{ num:'4',text:'申请提交' },{ num:'5',text:'审查跟进' },{ num:'6',text:'授权维护' }]
+  },
+  certification: {
+    icon: '🎓', name: '培训考证', stars: '★★★',
+    subtitle: '条码师岗位能力 · 人工智能 · 职业资格 · 职称评审',
+    advantage: { title: '博士团队培训考证专家 —— 条码师+人工智能+职业资格全覆盖', text: '参与T/CABC 18.1-2025条码工程师岗位能力要求团标编制，填补我国条码专业人才能力评价标准空白。提供条码师岗位能力培训、人工智能培训等专项培训服务。持有创业指导师、国家技术经纪人等多项证书，对报名流程、政策衔接、备考规划有实战体感。不是AI泛泛指导，而是"我们正在走的路，带你走"。' },
+    skills: [
+      { name: '条码师岗位能力培训', desc: '《条码师岗位能力要求》标准培训与考证' },
+      { name: '人工智能培训', desc: '人工智能相关岗位能力培训与考证' },
+      { name: '职业资格考证', desc: '经济师、工程师等职业资格考试指导' },
+      { name: '报名指导', desc: '报名流程、条件核查、材料准备' },
+      { name: '备考规划', desc: '学习计划、时间分配、重点标注' },
+      { name: '职称对应', desc: '河南省经济师=工程师职称政策解读' }
+    ],
+    tiers: ['tier-299', 'tier-999'],
+    flow: [{ num:'1',text:'条件评估' },{ num:'2',text:'考试选择' },{ num:'3',text:'报名完成' },{ num:'4',text:'备考执行' },{ num:'5',text:'考试通过' },{ num:'6',text:'职称认定' }]
+  },
+  ecommerce: {
+    icon: '🛒', name: '电商合规', stars: '★★',
+    subtitle: 'GS1系统规范 · 出海合规 · 产品溯源',
+    advantage: { title: '博士团队GS1编码体系+标准化能力 —— 电商产品统一规范+出海合规', text: '参与GS1系统在绿色城配领域标准研制，主持编码质量提升专项培训。通过GS1系统为电商产品统一规范，提供出海合规服务。校企合作国际专家为河南省科技厅创新创业导师。懂产品→GS1编码→电商规范→出海合规的闭环。' },
+    skills: [
+      { name: 'GS1产品编码', desc: '电商产品GS1条码/二维码统一规范' },
+      { name: '出海合规', desc: '跨境电商产品合规认证和编码注册' },
+      { name: '产品溯源', desc: '从生产到消费的全链路溯源体系' },
+      { name: '平台入驻规范', desc: '电商平台入驻编码规范指导' }
+    ],
+    tiers: ['tier-299', 'tier-999'],
+    flow: [{ num:'1',text:'平台选择' },{ num:'2',text:'入驻开店' },{ num:'3',text:'运营优化' },{ num:'4',text:'物流对接' }]
+  },
+  'trade-compliance': {
+    icon: '🌐', name: '外贸合规', stars: '★★',
+    subtitle: 'GS1编码 · UDI医疗编码唯一识别 · DPP数字产品护照',
+    advantage: { title: '博士团队GS1编码体系+标准化能力 —— 外贸合规及增值服务', text: '参与GS1系统在绿色城配领域标准研制，主持编码质量提升专项培训。通过GS1编码体系、UDI医疗编码唯一识别、DPP数字产品护照三大工具，提供外贸合规及增值服务。AI负责编码查询、合规清单，真人负责本地资源对接。' },
+    skills: [
+      { name: 'GS1编码合规', desc: 'GS1全球统一编码体系外贸合规应用' },
+      { name: 'UDI医疗编码', desc: 'UDI医疗器械唯一识别编码注册与应用' },
+      { name: 'DPP数字产品护照', desc: 'DPP数字产品护照合规及增值服务' },
+      { name: '合规自检', desc: 'REACH/CE等海外合规自检清单' }
+    ],
+    tiers: ['tier-299', 'tier-999'],
+    flow: [{ num:'1',text:'合规诊断' },{ num:'2',text:'资质办理' },{ num:'3',text:'通关对接' },{ num:'4',text:'持续合规' }]
+  },
+  'energy-saving': {
+    icon: '⚡', name: '用电节约', stars: '★',
+    subtitle: '容改需降本 · 电力可视化 · 算法节能减排',
+    advantage: { title: '博士团队能源管理服务 —— 先降本后增效再减排三步走', text: '路径清晰：先降本（容改需）→ 后增效（数字化平台电力可视化进行售电优惠）→ 再利用算法节能减排。标准化专家为河南省市场监督管理局标准化专家，标准化能力可迁移到节能标准、绿色工厂标准的制修订。AI负责技术方案生成，真人负责资源对接。' },
+    skills: [
+      { name: '容改需降本', desc: '容改需政策匹配，降低基本电费支出' },
+      { name: '电力可视化', desc: '数字化平台电力可视化+售电优惠对接' },
+      { name: '算法节能减排', desc: 'AI算法优化用能，实现节能减排' },
+      { name: '能源管理服务', desc: '企业/园区能源管理体系建设' }
+    ],
+    tiers: ['tier-299', 'tier-999'],
+    flow: [{ num:'1',text:'能耗诊断' },{ num:'2',text:'方案设计' },{ num:'3',text:'补贴匹配' },{ num:'4',text:'改造实施' }]
+  }
+};
+
+const tierLabels = { 'tier-299':'¥299 轻量咨询', 'tier-999':'¥999 深度代办', 'tier-9999':'¥9999 战略陪跑' };
+
+// 表单链接
+const feishuFormUrl = 'https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS&view=vewfjmeAoR';
+const tencentDocUrl = 'https://docs.qq.com/form/page/DSUhTUk9ob1NneGNo'; // 腾讯文档收集表链接（待替换为真实链接）
+
+// 内嵌表单：展示/隐藏
+function showInlineForm() {
+  const panel = document.getElementById('inlineFormPanel');
+  const success = document.getElementById('formSuccess');
+  if (success.classList.contains('show')) { success.classList.remove('show'); }
+  panel.classList.add('show');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// 内嵌表单：提交（邮件通知方式）
+function submitInlineForm() {
+  const name = document.getElementById('inlineName').value.trim();
+  const phone = document.getElementById('inlinePhone').value.trim();
+  if (!name) { alert('请填写姓名'); return; }
+  if (!phone) { alert('请填写手机号'); return; }
+  if (!/^1\d{10}$/.test(phone)) { alert('手机号格式不正确，请输入11位手机号'); return; }
+
+  const company = document.getElementById('inlineCompany').value.trim();
+  const city = document.getElementById('inlineCity').value.trim();
+  const agent = document.getElementById('inlineAgent').value;
+  const tier = document.getElementById('inlineTier').value;
+  const desc = document.getElementById('inlineDesc').value.trim();
+
+  // 构造邮件内容
+  const subject = `【中原帮办需求】${name} - ${agent || '未选择'} - ${tier || '未选择'}`;
+  const body = `姓名：${name}\n手机号：${phone}\n企业名称：${company || '未填写'}\n所在城市：${city || '未填写'}\n选择智能体：${agent || '未选择'}\n选择套餐：${tier || '未选择'}\n业务需求描述：${desc || '未填写'}`;
+
+  // 方案1：通过mailto打开邮箱客户端发送（最可靠，无需后端）
+  const mailtoLink = `mailto:674348396@qq.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  // 方案2：同时通过Web3Forms免费API发送邮件（无需注册，无需后端）
+  // 使用formsubmit.co作为备用方案
+  const formData = {
+    name: name,
+    phone: phone,
+    company: company || '未填写',
+    city: city || '未填写',
+    agent: agent || '未选择',
+    tier: tier || '未选择',
+    description: desc || '未填写',
+    _subject: subject
+  };
+
+  // 通过formsubmit.co发送（免费，无需后端）
+  fetch('https://formsubmit.co/ajax/674348396@qq.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  }).then(response => {
+    if (response.ok) {
+      // 显示成功状态
+      document.getElementById('inlineFormPanel').classList.remove('show');
+      const successEl = document.getElementById('formSuccess');
+      const detailEl = document.getElementById('successDetail');
+      detailEl.innerHTML = `
+        <div class="detail-row"><span class="detail-label">姓名：</span>${name}</div>
+        <div class="detail-row"><span class="detail-label">手机号：</span>${phone}</div>
+        <div class="detail-row"><span class="detail-label">企业：</span>${company || '未填写'}</div>
+        <div class="detail-row"><span class="detail-label">城市：</span>${city || '未填写'}</div>
+        <div class="detail-row"><span class="detail-label">智能体：</span>${agent || '未选择'}</div>
+        <div class="detail-row"><span class="detail-label">套餐：</span>${tier || '未选择'}</div>
+        <div class="detail-row"><span class="detail-label">需求：</span>${desc || '未填写'}</div>
+      `;
+      successEl.classList.add('show');
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      // API发送失败，降级为mailto
+      window.open(mailtoLink, '_blank');
+      alert('自动邮件发送遇到问题，已为您打开邮箱客户端。请直接发送即可，无需修改内容。');
+    }
+  }).catch(() => {
+    // 网络错误，降级为mailto
+    window.open(mailtoLink, '_blank');
+    alert('自动邮件发送遇到网络问题，已为您打开邮箱客户端。请直接发送即可，无需修改内容。');
+  });
+}
+
+function openAgentModal(key) {
+  const data = agentsData[key];
+  if (!data) return;
+  const hero = document.getElementById('modalHero');
+  const body = document.getElementById('modalBody');
+  const cta = document.getElementById('modalCta');
+
+  hero.innerHTML = `<div class="modal-hero-icon">${data.icon}</div><h3>${data.name} <span>智能体</span></h3><div class="modal-stars">${data.stars}</div><div class="modal-subtitle">${data.subtitle}</div>`;
+
+  let b = '';
+  b += `<div class="modal-section"><div class="modal-section-title">博士团队能力加持</div><div class="modal-advantage"><div class="adv-title">${data.advantage.title}</div><div class="adv-text">${data.advantage.text}</div></div></div>`;
+  b += `<div class="modal-section"><div class="modal-section-title">可办业务</div><div class="modal-skill-list">${data.skills.map(s=>`<div class="modal-skill-item"><div class="skill-name">${s.name}</div><div class="skill-desc">${s.desc}</div></div>`).join('')}</div></div>`;
+  b += `<div class="modal-section"><div class="modal-section-title">使用流程</div><div class="modal-flow">${data.flow.map((s,i)=>`<div class="modal-flow-step"><div class="step-num">${s.num}</div><div>${s.text}</div></div>${i<data.flow.length-1?'<div class="modal-flow-arrow">→</div>':''}`).join('')}</div></div>`;
+  b += `<div class="modal-section"><div class="modal-section-title">适用套餐</div><div class="modal-tiers">${data.tiers.map(t=>`<div class="modal-tier-badge ${t}">${tierLabels[t]}</div>`).join('')}</div></div>`;
+  body.innerHTML = b;
+
+  cta.innerHTML = `<p>选择提交方式，提交需求 —— AI即时响应，真人关键节点复核</p><div class="modal-cta-btns"><a href="#form" class="btn btn-primary btn-sm" onclick="closeModal()">选择方式提交需求</a><a href="#agents" class="btn btn-outline btn-sm" onclick="closeModal()">继续浏览</a></div>`;
+
+  const overlay = document.getElementById('agentModal');
+  overlay.style.display = 'flex';
+  requestAnimationFrame(()=> overlay.classList.add('show'));
+}
+
+function closeModal() {
+  const overlay = document.getElementById('agentModal');
+  overlay.classList.remove('show');
+  setTimeout(()=> overlay.style.display = 'none', 300);
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('agentModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.querySelectorAll('.agent-card').forEach(card => {
+  card.addEventListener('click', () => openAgentModal(card.dataset.agent));
+});
+
+document.querySelectorAll('.agent-filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.agent-filter-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.agent-card').forEach(card => {
+      if (filter === 'all' || card.classList.contains(filter)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+const cards=document.querySelectorAll('.problem-card,.team-member,.agent-card,.pricing-card,.case-card,.timeline-item,.howto-card');
+cards.forEach(c=>{c.style.opacity='0';c.style.transform='translateY(20px)';c.style.transition='all .5s'});
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+cards.forEach(c=>obs.observe(c));
+</script>
 </body>
 </html>

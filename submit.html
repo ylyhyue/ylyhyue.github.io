@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提交需求 — 中原帮办</title>
+<meta name="description" content="中原帮办需求提交：无需登录，填写基础信息即可，博士团队24小时内跟进。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;--bg2:#141414;--bg3:#1a1a1a;
+  --text:#e8e8e8;--text2:#aaa;--text3:#888;
+  --accent:#6C5CE7;--accent2:#a29bfe;--accent3:#4536c4;
+  --gold:#f0c040;--gold2:#d4a830;--green:#27ae60;--red:#e74c3c;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
+  --radius:12px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;line-height:1.7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:520px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.logo{text-align:center;margin-bottom:24px}
+.logo-icon{font-size:42px;margin-bottom:8px}
+.logo h1{font-size:24px;font-weight:700}
+.logo h1 span{color:var(--gold)}
+.logo p{font-size:13px;color:var(--text3);margin-top:4px}
+.form-title{font-size:18px;font-weight:600;margin-bottom:4px;color:var(--accent2)}
+.form-subtitle{font-size:13px;color:var(--text3);margin-bottom:24px}
+.form-group{margin-bottom:16px}
+.form-group label{font-size:13px;color:var(--text2);margin-bottom:6px;display:block;font-weight:500}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:12px 16px;color:var(--text);font-size:15px;outline:none;transition:all .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,92,231,.15)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text3)}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23888'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.form-group select option{background:var(--bg3);color:var(--text)}
+.form-group textarea{min-height:100px;resize:vertical;line-height:1.6}
+.required-dot{color:var(--red);font-size:12px;margin-left:4px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit-btn{width:100%;padding:14px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent3));color:#fff;font-size:16px;font-weight:600;border:none;cursor:pointer;transition:all .3s;margin-top:8px}
+.submit-btn:hover{background:linear-gradient(135deg,var(--accent2),var(--accent));transform:translateY(-2px)}
+.back-link{display:block;text-align:center;margin-top:20px;font-size:13px;color:var(--text3)}
+.back-link:hover{color:var(--gold)}
+.success{display:none;text-align:center;padding:20px 0}
+.success.show{display:block}
+.success-icon{font-size:56px;margin-bottom:12px}
+.success h2{font-size:22px;color:var(--gold);margin-bottom:8px}
+.success p{font-size:14px;color:var(--text2);line-height:1.6}
+.footer-text{text-align:center;font-size:12px;color:var(--text3);margin-top:24px;line-height:1.6}
+@media(max-width:520px){
+  .card{padding:24px}
+  .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="formCard">
+  <div class="logo">
+    <div class="logo-icon">🤝</div>
+    <h1>中原<span>帮办</span></h1>
+    <p>人类专家 + AI智能体 · 企业全生命周期帮办代办</p>
+  </div>
+
+  <div class="form-title">提交需求</div>
+  <div class="form-subtitle">无需登录任何平台，填写后博士团队将在 24 小时内联系您。</div>
+
+  <form id="submitForm" action="https://formsubmit.co/674348396@qq.com" method="POST">
+    <input type="hidden" name="_subject" value="【中原帮办需求】新提交">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" id="nextUrl" value="https://ylyhyue.github.io/submit.html?success=1">
+
+    <div class="row">
+      <div class="form-group">
+        <label>姓名<span class="required-dot">*</span></label>
+        <input type="text" name="name" placeholder="请输入姓名" required>
+      </div>
+      <div class="form-group">
+        <label>手机号<span class="required-dot">*</span></label>
+        <input type="tel" name="phone" placeholder="请输入手机号" required pattern="1\d{10}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label>企业名称</label>
+        <input type="text" name="company" placeholder="选填">
+      </div>
+      <div class="form-group">
+        <label>所在城市</label>
+        <input type="text" name="city" placeholder="选填">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label>选择板块</label>
+        <select name="pillar" id="pillarSelect">
+          <option value="">-- 请选择 --</option>
+          <option value="政务帮办代办">板块1 · 政务帮办代办</option>
+          <option value="技术顾问陪跑">板块2 · 技术顾问陪跑</option>
+          <option value="AI代理服务">板块3 · AI代理服务</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>需求方向</label>
+        <select name="agent" id="agentSelect">
+          <option value="">-- 请选择 --</option>
+          <option value="标准化">标准化</option>
+          <option value="营商环境">营商环境</option>
+          <option value="政务服务">政务服务</option>
+          <option value="项目申报">项目申报</option>
+          <option value="大赛辅导">大赛辅导</option>
+          <option value="OPC孵化">OPC孵化</option>
+          <option value="产品数字化">产品数字化</option>
+          <option value="专利申报">专利申报</option>
+          <option value="培训考证">培训考证</option>
+          <option value="电商合规">电商合规</option>
+          <option value="外贸合规">外贸合规</option>
+          <option value="用电节约">用电节约</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>业务需求描述</label>
+      <textarea name="description" placeholder="请简要描述您的业务需求……"></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">提交需求</button>
+  </form>
+
+  <div class="success" id="successMsg">
+    <div class="success-icon">✅</div>
+    <h2>需求已提交！</h2>
+    <p>博士团队将在 24 小时内通过您留下的联系方式跟进。<br>如有紧急需求，请直接联系邮箱：<strong style="color:var(--gold)">674348396@qq.com</strong></p>
+  </div>
+
+  <a href="index.html" class="back-link">← 返回中原帮办首页</a>
+  <div class="footer-text">信息仅用于业务沟通，严格保密。</div>
+</div>
+
+<script>
+// 根据 URL 参数自动预填需求方向
+function getParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+
+const agent = getParam('agent');
+if (agent) {
+  const agentSelect = document.getElementById('agentSelect');
+  for (let i = 0; i < agentSelect.options.length; i++) {
+    if (agentSelect.options[i].value === agent) {
+      agentSelect.selectedIndex = i;
+      document.getElementById('pillarSelect').value = 'AI代理服务';
+      break;
+    }
+  }
+}
+
+// 如果是提交成功返回，显示成功提示
+if (getParam('success') === '1') {
+  document.getElementById('submitForm').style.display = 'none';
+  document.getElementById('successMsg').classList.add('show');
+  document.querySelector('.form-title').textContent = '提交成功';
+  document.querySelector('.form-subtitle').textContent = '感谢您的信任，我们会尽快与您联系。';
+}
+
+// 根据当前页面域名调整返回地址，方便 CloudStudio 预览
+const nextInput = document.getElementById('nextUrl');
+if (window.location.origin !== 'https://ylyhyue.github.io') {
+  nextInput.value = window.location.origin + window.location.pathname + '?success=1';
+}
+</script>
+
+</body>
+</html>

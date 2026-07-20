@@ -76,16 +76,17 @@ a:hover{color:var(--gold)}
 .pillar-detail li::before{content:'▸';position:absolute;left:0;color:var(--accent2)}
 
 /* AGENTS (inside pillar 3) */
-.agents-mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;margin-top:12px}
-.agent-mini{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 10px;text-align:center;transition:all .2s}
+.agents-mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:12px}
+.agent-mini{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px 10px;text-align:center;transition:all .2s;display:flex;flex-direction:column;align-items:center}
 .agent-mini:hover{border-color:var(--accent);transform:translateY(-2px)}
 .agent-mini .a-icon{font-size:22px;margin-bottom:4px}
-.agent-mini .a-name{font-size:12px;font-weight:600}
-.agent-mini .a-stars{font-size:10px;color:var(--gold)}
-.agent-mini .a-qr{margin-top:8px;border-radius:4px;opacity:.7;transition:opacity .2s;cursor:pointer}
+.agent-mini .a-name{font-size:12px;font-weight:600;margin-bottom:2px}
+.agent-mini .a-desc{font-size:10px;color:var(--text3);line-height:1.4;margin-bottom:6px;min-height:28px}
+.agent-mini .a-stars{font-size:10px;color:var(--gold);margin-bottom:6px}
+.agent-mini .a-qr{border-radius:4px;opacity:.7;transition:opacity .2s;cursor:pointer;width:72px;height:72px}
 .agent-mini:hover .a-qr{opacity:1}
-.agent-mini .a-qr-tip{font-size:10px;color:var(--text3);margin-top:2px;text-align:center;display:none}
-.agent-mini:hover .a-qr-tip{display:block}
+.agent-mini .a-qr-tip{font-size:9px;color:var(--text3);margin-top:4px;text-align:center}
+.agent-mini:hover .a-qr-tip{color:var(--accent2)}
 
 /* PRICING */
 .pricing-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -179,9 +180,9 @@ footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);font-
 <!-- HERO -->
 <section class="hero">
 <div class="hero-content">
-<div class="hero-badge">三大板块 · 人类专家 + AI智能体</div>
+<div class="hero-badge">政务帮办 · 技术陪跑 · AI代理</div>
 <h1>中原<span>帮办</span></h1>
-<p class="hero-sub">人类专家 + AI智能体 · 企业全生命周期帮办代办 —— 政务帮办 · 技术陪跑 · AI代理</p>
+<p class="hero-sub">人类专家 + AI智能体 · 企业全生命周期帮办代办 —— 让企业专注核心业务</p>
 <div class="hero-cta">
 <a href="#pillars" class="btn btn-primary">了解三大板块 →</a>
 <a href="#form" class="btn btn-outline">提交需求</a>
@@ -275,29 +276,29 @@ footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);font-
 <div class="pillar-icon">🤖</div>
 <h3>AI代理服务</h3>
 <div class="pillar-sub">按行业定制AI工具</div>
-<p class="pillar-desc">根据不同行业提供定制化AI工具，包括本平台提供的13个智能体。AI处理80%标准化工作，真人介入20%关键节点。</p>
+<p class="pillar-desc">根据不同行业提供定制化AI工具，包括本平台提供的12个智能体。AI处理80%标准化工作，真人介入20%关键节点。</p>
 <div class="pillar-tags">
-<span class="pillar-tag">13个智能体</span>
+<span class="pillar-tag">12个智能体</span>
 <span class="pillar-tag">行业定制</span>
 <span class="pillar-tag">7×24在线</span>
 <span class="pillar-tag">真人复核</span>
 </div>
 <span class="pillar-learn">查看智能体矩阵 →</span>
 <div class="pillar-detail" id="p3">
-<h4>13个定制化AI智能体</h4>
+<h4>12个定制化AI智能体</h4>
 <div class="agents-mini-grid">
-<div class="agent-mini"><div class="a-icon">📐</div><div class="a-name">标准化</div><div class="a-stars">★★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E6%A0%87%E5%87%86%E5%8C%96" alt="标准化二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">🏛</div><div class="a-name">营商环境</div><div class="a-stars">★★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E8%90%A5%E5%95%86%E7%8E%AF%E5%A2%83" alt="营商环境二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">📋</div><div class="a-name">政务服务</div><div class="a-stars">★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E6%94%BF%E5%8A%A1%E6%9C%8D%E5%8A%A1" alt="政务服务二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">📌</div><div class="a-name">项目申报</div><div class="a-stars">★★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E9%A1%B9%E7%9B%AE%E7%94%B3%E6%8A%A5" alt="项目申报二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">🏆</div><div class="a-name">大赛辅导</div><div class="a-stars">★★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E5%A4%A7%E8%B5%9B%E8%BE%85%E5%AF%BC" alt="大赛辅导二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">🚀</div><div class="a-name">OPC孵化</div><div class="a-stars">★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3DOPC%E5%AD%B5%E5%8C%96" alt="OPC孵化二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">📱</div><div class="a-name">产品数字化</div><div class="a-stars">★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E4%BA%A7%E5%93%81%E6%95%B0%E5%AD%97%E5%8C%96" alt="产品数字化二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">📝</div><div class="a-name">专利申报</div><div class="a-stars">★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E4%B8%93%E5%88%A9%E7%94%B3%E6%8A%A5" alt="专利申报二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">🎓</div><div class="a-name">培训考证</div><div class="a-stars">★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E5%9F%B9%E8%AE%A2%E8%80%83%E8%AF%81" alt="培训考证二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">🛒</div><div class="a-name">电商合规</div><div class="a-stars">★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E7%94%B5%E5%95%86%E5%90%88%E8%A7%84" alt="电商合规二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">🌐</div><div class="a-name">外贸合规</div><div class="a-stars">★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E5%A4%96%E8%B4%B8%E5%90%88%E8%A7%84" alt="外贸合规二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
-<div class="agent-mini"><div class="a-icon">⚡</div><div class="a-name">用电节约</div><div class="a-stars">★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=https%3A%2F%2Fscnke9dkyl7e.feishu.cn%2Fbase%2FWtgeb0qBpaFByJsNomZcd4Sqn2g%3Ftable%3DtblNg5ZdrvlDDwxS%26view%3DvewfjmeAoR%26agent%3D%E7%94%A8%E7%94%B5%E8%8A%82%E7%BA%A6" alt="用电节约二维码" width="80" height="80"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">📐</div><div class="a-name">标准化</div><div class="a-desc">标准研制·试点申报</div><div class="a-stars">★★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">🏛</div><div class="a-name">营商环境</div><div class="a-desc">国家级评审专家</div><div class="a-stars">★★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">📋</div><div class="a-name">政务服务</div><div class="a-desc">帮办代办提效</div><div class="a-stars">★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">📌</div><div class="a-name">项目申报</div><div class="a-desc">高企·专精特新</div><div class="a-stars">★★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">🏆</div><div class="a-name">大赛辅导</div><div class="a-desc">创新创业·互联网+</div><div class="a-stars">★★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">🚀</div><div class="a-name">OPC孵化</div><div class="a-desc">创业孵化·企业服务</div><div class="a-stars">★★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">📱</div><div class="a-name">产品数字化</div><div class="a-desc">条码·传感器·平台</div><div class="a-stars">★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">📝</div><div class="a-name">专利申报</div><div class="a-desc">发明·实用新型·软著</div><div class="a-stars">★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">🎓</div><div class="a-name">培训考证</div><div class="a-desc">条码师·经济师</div><div class="a-stars">★★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">🛒</div><div class="a-name">电商合规</div><div class="a-desc">GS1规范·出海合规</div><div class="a-stars">★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">🌐</div><div class="a-name">外贸合规</div><div class="a-desc">GS1·UDI·DPP</div><div class="a-stars">★★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
+<div class="agent-mini"><div class="a-icon">⚡</div><div class="a-name">用电节约</div><div class="a-desc">容改需·节能减排</div><div class="a-stars">★</div><img class="a-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&amp;data=https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS%26view=vewfjmeAoR" alt="扫码提交需求" width="72" height="72"><div class="a-qr-tip">扫码提交需求</div></div>
 </div>
 <h4 style="margin-top:16px">服务模式</h4>
 <ul>

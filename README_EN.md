@@ -23,11 +23,11 @@ We provide end-to-end technical consulting: standardization talent training, pro
 ### 3. AI Agent Services
 **Industry-customized AI tools**
 
-We offer 12 specialized AI agents tailored to different industries and business scenarios. AI handles 80% of standardized work, while human experts step in at the 20% of critical decision points.
+We offer 14 specialized AI agents tailored to different industries and business scenarios. AI handles 80% of standardized work, while human experts step in at the 20% of critical decision points.
 
 ---
 
-## 12 AI Agents
+## 14 AI Agents
 
 | # | Agent | Capability |
 |---|-------|------------|
@@ -43,6 +43,8 @@ We offer 12 specialized AI agents tailored to different industries and business 
 | 10 | **E-commerce Compliance Agent** | GS1-based product standardization and cross-border compliance certification for e-commerce. |
 | 11 | **Foreign Trade Compliance Agent** | GS1 international standards, UDI medical coding, DPP digital product passport compliance, and value-added services. |
 | 12 | **Electricity Saving Agent** | Energy management: cost reduction first, efficiency improvement second, and algorithm-driven energy conservation. |
+| 13 | **Smart Transportation Agent** | GS1-based green urban distribution research, Pingdingshan multimodal transport one-document management; joint standardization research with Henan Institute of Standardization & Quality, Henan University of Urban Construction, and local transport SOEs. |
+| 14 | **Data Asset Agent** | Based on GS1 system and "Barcode Technology Applications" undergraduate textbook content on digital society & coding standardization. Provides data governance policy, data asset inventory, and metadata management services, using hospital UDI management and university library management as examples. Full-chain data asset & data standardization services. |
 
 ---
 

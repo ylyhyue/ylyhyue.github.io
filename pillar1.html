@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>政务帮办代办 — 中原帮办</title>
+<meta name="description" content="中原帮办政务帮办代办服务：工商注册、税务登记、证照办理、补贴申领、帮办代办，依托政务服务平台，让企业专注核心业务。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;--bg2:#141414;--bg3:#1a1a1a;--bg4:#222;
+  --text:#e8e8e8;--text2:#aaa;--text3:#888;
+  --accent:#6C5CE7;--accent2:#a29bfe;--accent3:#4536c4;
+  --gold:#f0c040;--gold2:#d4a830;--green:#27ae60;--teal:#00b894;
+  --red:#e74c3c;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
+  --radius:12px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans SC','Inter',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+a{color:var(--accent2);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold)}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{padding:16px 0;position:sticky;top:0;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid var(--border)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav .logo{font-size:16px;font-weight:700;color:var(--gold)}
+.nav .back{font-size:13px;padding:6px 14px;border:1px solid var(--border2);border-radius:20px;color:var(--text2);transition:all .2s}
+.nav .back:hover{border-color:var(--accent);color:var(--accent2)}
+
+/* HERO */
+.hero{padding:60px 0 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 50% 30%,rgba(108,92,231,.12) 0%,transparent 60%);animation:drift 20s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-3%,2%)}}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-block;padding:6px 16px;border:1px solid var(--accent);border-radius:20px;font-size:13px;color:var(--accent2);letter-spacing:1px;margin-bottom:16px;background:rgba(108,92,231,.08)}
+.hero h1{font-size:clamp(28px,5vw,44px);font-weight:700;margin-bottom:12px}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:clamp(14px,2.2vw,18px);color:var(--text2);max-width:560px;margin:0 auto 24px;font-weight:300}
+.btn{padding:12px 28px;border-radius:var(--radius);font-size:15px;font-weight:500;cursor:pointer;transition:all .3s;border:none;display:inline-block;text-align:center}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent3);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text2)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:#000;font-weight:600}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+
+/* SECTION */
+.section{padding:40px 0 60px}
+.section-label{font-size:13px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-bottom:12px;font-weight:500}
+.section h2{font-size:clamp(24px,4vw,32px);font-weight:700;margin-bottom:12px}
+.section h2 span{color:var(--gold)}
+.section-desc{font-size:16px;color:var(--text2);max-width:640px;margin-bottom:32px}
+
+/* CARD */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;margin-bottom:20px;transition:all .3s}
+.card:hover{border-color:var(--accent)}
+.card h3{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--gold)}
+.card ul{list-style:none;padding:0}
+.card li{font-size:14px;color:var(--text2);padding:8px 0;padding-left:22px;position:relative;line-height:1.7}
+.card li::before{content:'▸';position:absolute;left:0;color:var(--accent2);font-weight:700}
+.card p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:12px}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tag{padding:5px 12px;border-radius:6px;font-size:12px;border:1px solid var(--border);color:var(--text3);background:var(--bg3)}
+
+/* CTA */
+.cta-section{text-align:center;padding:60px 0;background:var(--bg2);border-top:1px solid var(--border)}
+.cta-section h2{font-size:clamp(22px,4vw,30px);margin-bottom:12px}
+.cta-section h2 span{color:var(--gold)}
+.cta-section p{font-size:15px;color:var(--text2);max-width:500px;margin:0 auto 24px}
+
+footer{text-align:center;padding:28px 0;border-top:1px solid var(--border);font-size:13px;color:var(--text3)}
+
+@media(max-width:768px){
+  .hero{padding:40px 0 32px}
+  .card{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="container">
+<a href="index.html" class="logo">中原帮办</a>
+<a href="index.html" class="back">← 返回首页</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container hero-content">
+<div class="hero-badge">板块 01 · 政务帮办代办</div>
+<h1>依托政务服务平台，<span>让企业办事更高效</span></h1>
+<p class="hero-sub">个人与企业全生命周期业务帮办代办。从注册登记到资质办理，从政策匹配到补贴申领，帮您快速找到办理入口，提高办事效率。</p>
+<a href="index.html#form" class="btn btn-primary">立即提交需求 →</a>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-label">服务内容</div>
+<h2>全流程帮办，<span>省时省心</span></h2>
+
+<div class="card">
+<h3>事项办理支持</h3>
+<ul>
+<li>所有个人和企业可办理事项精准检索</li>
+<li>高频办理事项快速匹配办理入口</li>
+<li>代跑窗口、代填表单、代交材料</li>
+<li>自动生成所需材料清单和模板</li>
+<li>从提交到办结全程跟踪提醒</li>
+<li>河南省/平顶山市本地政策和窗口经验</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>适合人群</h3>
+<ul>
+<li><strong>初创企业</strong>：工商注册、税务登记、社保开户、银行开户</li>
+<li><strong>中小企业</strong>：证照办理、年检年报、变更注销、资质维护</li>
+<li><strong>个人办事</strong>：社保医保、公积金、不动产登记、户籍迁移</li>
+<li><strong>外地企业</strong>：不熟悉本地政务窗口和办理流程，需要本地向导</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>服务优势</h3>
+<ul>
+<li>在行政服务中心工作多年，熟悉本地政务流程和窗口要求</li>
+<li>帮助客户一次性准备齐全材料，减少反复跑腿</li>
+<li>对接工商、税务、社保、医保、不动产等多部门资源</li>
+<li>AI智能预填+真人复核，提升材料准确率</li>
+<li>一事一议，按需报价，透明无隐形费用</li>
+</ul>
+</div>
+
+<div class="tags">
+<span class="tag">工商注册</span>
+<span class="tag">税务登记</span>
+<span class="tag">证照办理</span>
+<span class="tag">补贴申领</span>
+<span class="tag">帮办代办</span>
+<span class="tag">年检年报</span>
+<span class="tag">变更注销</span>
+<span class="tag">社保医保</span>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>有政务办理需求？<span>让中原帮办帮你跑</span></h2>
+<p>提交需求后，博士团队将在24小时内联系您，沟通具体事项和办理方案。</p>
+<a href="index.html#form" class="btn btn-gold">提交需求 →</a>
+<a href="index.html" class="btn btn-outline" style="margin-left:12px">返回首页</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>中原帮办 · 商业全链帮办代办系统 · 人类专家 + AI智能体</p>
+<p style="margin-top:8px;font-size:12px;color:var(--text3)">© 2026 中原帮办 · 保留所有权利</p>
+</div>
+</footer>
+
+</body>
+</html>

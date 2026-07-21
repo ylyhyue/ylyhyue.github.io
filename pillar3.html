@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI代理服务 — 中原帮办</title>
+<meta name="description" content="中原帮办AI代理服务：14个定制化AI智能体，覆盖标准化、营商环境、政务服务、项目申报、大赛辅导、OPC孵化、产品数字化、专利申报、培训考证、电商合规、外贸合规、用电节约、智慧交通、数据资产。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;--bg2:#141414;--bg3:#1a1a1a;--bg4:#222;
+  --text:#e8e8e8;--text2:#aaa;--text3:#888;
+  --accent:#6C5CE7;--accent2:#a29bfe;--accent3:#4536c4;
+  --gold:#f0c040;--gold2:#d4a830;--green:#27ae60;--teal:#00b894;
+  --red:#e74c3c;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
+  --radius:12px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans SC','Inter',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+a{color:var(--accent2);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold)}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+
+.nav{padding:16px 0;position:sticky;top:0;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid var(--border)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav .logo{font-size:16px;font-weight:700;color:var(--gold)}
+.nav .back{font-size:13px;padding:6px 14px;border:1px solid var(--border2);border-radius:20px;color:var(--text2);transition:all .2s}
+.nav .back:hover{border-color:var(--accent);color:var(--accent2)}
+
+.hero{padding:60px 0 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 50% 30%,rgba(108,92,231,.12) 0%,transparent 60%);animation:drift 20s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-3%,2%)}}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-block;padding:6px 16px;border:1px solid var(--accent);border-radius:20px;font-size:13px;color:var(--accent2);letter-spacing:1px;margin-bottom:16px;background:rgba(108,92,231,.08)}
+.hero h1{font-size:clamp(28px,5vw,44px);font-weight:700;margin-bottom:12px}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:clamp(14px,2.2vw,18px);color:var(--text2);max-width:560px;margin:0 auto 24px;font-weight:300}
+.btn{padding:12px 28px;border-radius:var(--radius);font-size:15px;font-weight:500;cursor:pointer;transition:all .3s;border:none;display:inline-block;text-align:center}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent3);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text2)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:#000;font-weight:600}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+
+.section{padding:40px 0 60px}
+.section-label{font-size:13px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-bottom:12px;font-weight:500}
+.section h2{font-size:clamp(24px,4vw,32px);font-weight:700;margin-bottom:12px}
+.section h2 span{color:var(--gold)}
+.section-desc{font-size:16px;color:var(--text2);max-width:640px;margin-bottom:32px}
+
+/* AGENTS */
+.agents-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:24px}
+.agent-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all .3s;position:relative;display:flex;gap:16px;align-items:flex-start}
+.agent-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 8px 24px rgba(108,92,231,.12)}
+.agent-card .a-left{flex:1;min-width:0}
+.agent-card .a-icon{font-size:28px;margin-bottom:8px}
+.agent-card .a-name{font-size:15px;font-weight:700;margin-bottom:2px}
+.agent-card .a-stars{font-size:11px;color:var(--gold);margin-bottom:8px}
+.agent-card .a-desc{font-size:13px;color:var(--text2);line-height:1.6}
+.agent-card .a-advantage{font-size:12px;color:var(--accent2);margin-top:8px;padding:6px 10px;background:rgba(108,92,231,.08);border-radius:6px;line-height:1.5}
+.agent-card .a-submit{display:block;width:100%;margin-top:12px;padding:10px 0;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent3));color:#fff;font-size:14px;font-weight:600;text-align:center;cursor:pointer;border:none;transition:all .3s}
+.agent-card .a-submit:hover{background:linear-gradient(135deg,var(--accent2),var(--accent));transform:translateY(-2px);box-shadow:0 4px 12px rgba(108,92,231,.3)}
+.agent-card .a-right{display:flex;flex-direction:column;align-items:center;flex-shrink:0;padding-top:4px}
+.agent-card .a-qr{width:80px;height:80px;border-radius:6px;background:#fff;padding:3px;opacity:.9;transition:opacity .2s}
+.agent-card:hover .a-qr{opacity:1}
+.agent-card .a-qr-tip{font-size:10px;color:var(--text3);margin-top:6px;text-align:center;white-space:nowrap}
+.agent-card:hover .a-qr-tip{color:var(--accent2)}
+
+/* CARD */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;margin-bottom:20px;transition:all .3s}
+.card:hover{border-color:var(--accent)}
+.card h3{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--gold)}
+.card ul{list-style:none;padding:0}
+.card li{font-size:14px;color:var(--text2);padding:8px 0;padding-left:22px;position:relative;line-height:1.7}
+.card li::before{content:'▸';position:absolute;left:0;color:var(--accent2);font-weight:700}
+
+/* MODAL */
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.75);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;max-width:580px;width:100%;max-height:90vh;overflow-y:auto;padding:32px;position:relative;animation:slideUp .3s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);color:var(--text3);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.modal-close:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.modal-title{font-size:18px;font-weight:700;margin-bottom:4px}
+.modal-agent-name{font-size:14px;color:var(--accent2);margin-bottom:16px}
+.modal-subtitle{font-size:13px;color:var(--text3);margin-bottom:20px;line-height:1.5}
+.modal-channels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.modal-channel{border:2px solid var(--border);border-radius:10px;padding:16px 12px;text-align:center;cursor:pointer;transition:all .3s;background:var(--bg3)}
+.modal-channel:hover{transform:translateY(-2px)}
+.modal-channel .mc-icon{font-size:28px;margin-bottom:6px}
+.modal-channel .mc-name{font-size:14px;font-weight:600;margin-bottom:2px}
+.modal-channel .mc-desc{font-size:11px;color:var(--text3)}
+.modal-channel.feishu{border-color:rgba(0,184,148,.3)}.modal-channel.feishu:hover{border-color:var(--teal);background:rgba(0,184,148,.06)}
+.modal-channel.feishu .mc-name{color:var(--teal)}
+.modal-channel.tencent{border-color:rgba(240,192,64,.3)}.modal-channel.tencent:hover{border-color:var(--gold);background:rgba(240,192,64,.06)}
+.modal-channel.tencent .mc-name{color:var(--gold)}
+.modal-channel.inline{border-color:rgba(108,92,231,.3)}.modal-channel.inline:hover{border-color:var(--accent);background:rgba(108,92,231,.06)}
+.modal-channel.inline .mc-name{color:var(--accent2)}
+.modal-channel.selected{border-color:var(--accent)!important;background:rgba(108,92,231,.12)!important}
+.modal-form-wrap{display:none;animation:fadeSlide .3s ease}
+.modal-form-wrap.show{display:block}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.modal-form-wrap .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.modal-form-wrap .form-row.single{grid-template-columns:1fr}
+.modal-form-wrap .form-group label{font-size:13px;color:var(--text2);margin-bottom:6px;display:block;font-weight:500}
+.modal-form-wrap .form-group input,.modal-form-wrap .form-group select,.modal-form-wrap .form-group textarea{width:100%;background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:12px 16px;color:var(--text);font-size:15px;font-family:inherit;transition:all .2s;outline:none}
+.modal-form-wrap .form-group input:focus,.modal-form-wrap .form-group select:focus,.modal-form-wrap .form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,92,231,.15)}
+.modal-form-wrap .form-group input::placeholder,.modal-form-wrap .form-group textarea::placeholder{color:var(--text3)}
+.modal-form-wrap .form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23888'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.modal-form-wrap .form-group textarea{min-height:80px;resize:vertical;line-height:1.6}
+.modal-form-wrap .required-dot{color:var(--red);font-size:12px;margin-left:4px}
+.modal-form-wrap .form-submit-area{text-align:center;margin-top:20px}
+
+.cta-section{text-align:center;padding:60px 0;background:var(--bg2);border-top:1px solid var(--border)}
+.cta-section h2{font-size:clamp(22px,4vw,30px);margin-bottom:12px}
+.cta-section h2 span{color:var(--gold)}
+.cta-section p{font-size:15px;color:var(--text2);max-width:500px;margin:0 auto 24px}
+
+footer{text-align:center;padding:28px 0;border-top:1px solid var(--border);font-size:13px;color:var(--text3)}
+
+@media(max-width:768px){
+  .hero{padding:40px 0 32px}
+  .agents-grid{grid-template-columns:1fr}
+  .modal-channels{grid-template-columns:1fr}
+  .modal-form-wrap .form-row{grid-template-columns:1fr}
+  .modal-box{padding:24px;margin:10px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="container">
+<a href="index.html" class="logo">中原帮办</a>
+<a href="index.html" class="back">← 返回首页</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container hero-content">
+<div class="hero-badge">板块 03 · AI代理服务</div>
+<h1>14个定制化<span>AI智能体</span></h1>
+<p class="hero-sub">AI处理80%标准化工作，真人介入20%关键节点。根据不同行业提供定制化AI工具，让企业专注核心业务。</p>
+<a href="index.html#form" class="btn btn-primary">立即提交需求 →</a>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-label">智能体矩阵</div>
+<h2>选择适合的智能体，<span>扫码或点击提交需求</span></h2>
+<p class="section-desc">每个智能体都经过博士团队训练与校准，既具备AI的高效响应能力，又有人类专家的关键节点复核。</p>
+
+<div class="agents-grid">
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">📐</div>
+<div class="a-name">标准化智能体</div>
+<div class="a-stars">★★★★★</div>
+<div class="a-desc">提供参与标准研制、标准化试点培育和申报等全链条标准化服务。从团体标准、地方标准到企业标准起草编撰，博士团队全程陪跑。</div>
+<div class="a-advantage">💡 标准化博士团队加持 · 团标3项 · 国标参编 · 试点评审49项</div>
+<button class="a-submit" onclick="openModal('标准化')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="标准化" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">🏛</div>
+<div class="a-name">营商环境智能体</div>
+<div class="a-stars">★★★★★</div>
+<div class="a-desc">国家级营商环境评审专家领衔，提供营商环境评价、标准化试点培育、企业合规诊断等服务，助力企业精准对接政策红利。</div>
+<div class="a-advantage">💡 中国贸促会营商环境标准化试点评审专家领衔</div>
+<button class="a-submit" onclick="openModal('营商环境')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="营商环境" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">📋</div>
+<div class="a-name">政务服务智能体</div>
+<div class="a-stars">★★★★</div>
+<div class="a-desc">所有个人和企业可办理事项、高频办理事项，帮助快速找到事项办理入口，通过帮办代办服务提高办事效率。代跑窗口、代填表单、代交材料。</div>
+<div class="a-advantage">💡 在行政服务中心工作多年 · 熟悉本地政策和办理流程</div>
+<button class="a-submit" onclick="openModal('政务服务')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="政务服务" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">📌</div>
+<div class="a-name">项目申报智能体</div>
+<div class="a-stars">★★★★★</div>
+<div class="a-desc">高新技术企业认定、专精特新企业申报、质量奖、科技项目申报等全流程托管。从材料准备到评审答辩，博士团队全程陪跑。</div>
+<div class="a-advantage">💡 在物流园区担任企业服务部长 · 深谙企业痛点</div>
+<button class="a-submit" onclick="openModal('项目申报')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="项目申报" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">🏆</div>
+<div class="a-name">大赛辅导智能体</div>
+<div class="a-stars">★★★★★</div>
+<div class="a-desc">大学生创新创业大赛咨询辅导、全国物品编码大赛咨询辅导、互联网+大赛咨询辅导。从选题策划到路演答辩，专业导师全程指导。</div>
+<div class="a-advantage">💡 河南省大众创业导师 · 多年大赛辅导实战经验</div>
+<button class="a-submit" onclick="openModal('大赛辅导')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="大赛辅导" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">🚀</div>
+<div class="a-name">OPC孵化智能体</div>
+<div class="a-stars">★★★★</div>
+<div class="a-desc">创业孵化全流程陪跑，从商业模式梳理到资源对接，从注册开户到首批客户获取。为初创企业提供"一站式"孵化服务。</div>
+<div class="a-advantage">💡 河南省大众创业导师 · 创业指导师（高级技师）</div>
+<button class="a-submit" onclick="openModal('OPC孵化')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="OPC孵化" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">📱</div>
+<div class="a-name">产品数字化智能体</div>
+<div class="a-stars">★★★</div>
+<div class="a-desc">按照产品条码、传感器、车载终端、数字化系统平台等产品服务进行分类，帮助企业完成产品数字化升级和条码溯源体系建设。</div>
+<div class="a-advantage">💡 中国条码技术与应用协会标准工作委员会专家委员</div>
+<button class="a-submit" onclick="openModal('产品数字化')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="产品数字化" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">📝</div>
+<div class="a-name">专利申报智能体</div>
+<div class="a-stars">★★★</div>
+<div class="a-desc">发明专利、实用新型、软件著作权申请全流程服务。从技术交底书撰写到审查意见答复，专业团队确保申报质量。</div>
+<div class="a-advantage">💡 国家技术经纪人 · 高校成果转化专家</div>
+<button class="a-submit" onclick="openModal('专利申报')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="专利申报" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">🎓</div>
+<div class="a-name">培训考证智能体</div>
+<div class="a-stars">★★★</div>
+<div class="a-desc">涵盖《条码师岗位能力要求》《人工智能》等培训课程，经济师、工程师等职业资格考试辅导。从备考规划到考点精讲，系统化培训体系。</div>
+<div class="a-advantage">💡 河南城建学院兼职教师 · 校企合作产教融合</div>
+<button class="a-submit" onclick="openModal('培训考证')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="培训考证" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">🛒</div>
+<div class="a-name">电商合规智能体</div>
+<div class="a-stars">★★</div>
+<div class="a-desc">通过GS1系统为电商产品统一规范，提供出海合规服务。从产品条码规范到跨境合规认证，确保电商运营合规无忧。</div>
+<div class="a-advantage">💡 中国条码技术与应用协会标准工作委员会专家委员</div>
+<button class="a-submit" onclick="openModal('电商合规')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="电商合规" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">🌐</div>
+<div class="a-name">外贸合规智能体</div>
+<div class="a-stars">★★</div>
+<div class="a-desc">GS1国际标准合规、UDI医疗编码唯一识别、DPP数字产品护照合规及增值服务。帮助企业打通国际贸易合规通道。</div>
+<div class="a-advantage">💡 GS1国际标准认证专家 · 条码与编码标准化</div>
+<button class="a-submit" onclick="openModal('外贸合规')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="外贸合规" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">⚡</div>
+<div class="a-name">用电节约智能体</div>
+<div class="a-stars">★</div>
+<div class="a-desc">用电节约和能源管理服务，路径"先降本（容改需）后增效（数字化平台电力可视化进行售电优惠），再利用算法节能减排"。</div>
+<div class="a-advantage">💡 能源管理专业团队 · 容改需·电力可视化·算法节能减排</div>
+<button class="a-submit" onclick="openModal('用电节约')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="用电节约" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">🚦</div>
+<div class="a-name">智慧交通智能体</div>
+<div class="a-stars">★★★</div>
+<div class="a-desc">基于GS1在绿色城配领域的应用研究，开展平顶山市多式联运一单制管理。已联合河南省标准化和质量研究院、河南城建学院和当地交通领域国企公司共同形成课题研究等标准化成果。</div>
+<div class="a-advantage">💡 GS1绿色城配应用 · 多式联运一单制 · 省标院+城建学院+国企联合课题</div>
+<button class="a-submit" onclick="openModal('智慧交通')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="智慧交通" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+<div class="agent-card">
+<div class="a-left">
+<div class="a-icon">📊</div>
+<div class="a-name">数据资产智能体</div>
+<div class="a-stars">★★★</div>
+<div class="a-desc">基于GS1系统与《条码技术应用》本科教材中数字化社会与编码标准化内容，通过数据治理政策、数据资产清单和元数据管理，以医院UDI管理和高校图书管理为例，提供数据资产与数据标准化全链条服务。</div>
+<div class="a-advantage">💡 GS1编码标准化 · 条码技术应用教材 · 数据治理·资产清单·元数据管理 · 医院UDI+高校图书管理</div>
+<button class="a-submit" onclick="openModal('数据资产')">提交需求 →</button>
+</div>
+<div class="a-right">
+<img class="a-qr" data-agent="数据资产" alt="长按识别提交需求" width="80" height="80">
+<div class="a-qr-tip">长按识别 提交需求</div>
+</div>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:32px">
+<h3>服务模式</h3>
+<ul>
+<li>AI智能问答，7×24即时响应</li>
+<li>按行业定制AI工作流和工具链</li>
+<li>博士团队关键节点真人复核</li>
+<li>从需求诊断到交付全程跟踪</li>
+<li>一事一议，按需报价，透明无隐形费用</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>需要AI智能体服务？<span>选择智能体提交需求</span></h2>
+<p>扫码或点击智能体卡片上的"提交需求"按钮，博士团队将在24小时内跟进。</p>
+<a href="index.html#form" class="btn btn-gold">返回首页提交需求 →</a>
+<a href="index.html" class="btn btn-outline" style="margin-left:12px">返回首页</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>中原帮办 · 商业全链帮办代办系统 · 人类专家 + AI智能体</p>
+<p style="margin-top:8px;font-size:12px;color:var(--text3)">© 2026 中原帮办 · 保留所有权利</p>
+</div>
+</footer>
+
+<!-- SUBMIT MODAL -->
+<div class="modal-overlay" id="submitModal">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal()">✕</button>
+<div class="modal-title">提交需求</div>
+<div class="modal-agent-name" id="modalAgentName"></div>
+<div class="modal-subtitle">选择您习惯的方式提交，无需登录任何平台，博士团队24小时内跟进。</div>
+<div class="modal-channels">
+<a href="#" id="modalFeishuLink" target="_blank" rel="noopener" class="modal-channel feishu" onclick="handleFeishuClick(event)">
+<div class="mc-icon">🦅</div>
+<div class="mc-name">飞书表单</div>
+<div class="mc-desc">跳转飞书填写<br>需飞书账号登录</div>
+</a>
+<a href="https://docs.qq.com/form/page/DSUhTUk9ob1NneGNo" target="_blank" rel="noopener" class="modal-channel tencent" onclick="closeModal()">
+<div class="mc-icon">📄</div>
+<div class="mc-name">腾讯文档</div>
+<div class="mc-desc">跳转腾讯文档填写<br>微信即可填写</div>
+</a>
+<button class="modal-channel inline" onclick="selectInlineChannel(this)">
+<div class="mc-icon">✍️</div>
+<div class="mc-name">在线填写</div>
+<div class="mc-desc">直接在网页内填写<br>最便捷</div>
+</button>
+</div>
+
+<div class="modal-form-wrap" id="modalFormWrap">
+<div class="form-row">
+<div class="form-group"><label>姓名<span class="required-dot">*</span></label><input type="text" id="modalName" placeholder="请输入姓名" required></div>
+<div class="form-group"><label>手机号<span class="required-dot">*</span></label><input type="tel" id="modalPhone" placeholder="请输入手机号" required></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label>企业名称</label><input type="text" id="modalCompany" placeholder="选填"></div>
+<div class="form-group"><label>所在城市</label><input type="text" id="modalCity" placeholder="选填"></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label>选择板块</label><select id="modalPillar"><option value="">-- 请选择 --</option><option value="政务帮办代办">板块1·政务帮办代办</option><option value="技术顾问陪跑">板块2·技术顾问陪跑</option><option value="AI代理服务">板块3·AI代理服务</option></select></div>
+<div class="form-group"><label>需求方向</label><select id="modalAgentSelect"><option value="">-- 请选择 --</option><option value="标准化">标准化</option><option value="营商环境">营商环境</option><option value="政务服务">政务服务</option><option value="项目申报">项目申报</option><option value="大赛辅导">大赛辅导</option><option value="OPC孵化">OPC孵化</option><option value="产品数字化">产品数字化</option><option value="专利申报">专利申报</option><option value="培训考证">培训考证</option><option value="电商合规">电商合规</option><option value="外贸合规">外贸合规</option><option value="用电节约">用电节约</option><option value="智慧交通">智慧交通</option><option value="数据资产">数据资产</option></select></div>
+</div>
+<div class="form-row single">
+<div class="form-group"><label>业务需求描述</label><textarea id="modalDesc" placeholder="请简要描述您的业务需求……"></textarea></div>
+</div>
+<div class="form-submit-area">
+<button class="btn btn-gold" style="padding:14px 40px;font-size:16px" onclick="submitModalForm()">提交需求</button>
+<p style="font-size:12px;color:var(--text3);margin-top:12px">提交后博士团队将在24小时内联系您 · 信息仅用于业务沟通，绝不外泄</p>
+</div>
+</div>
+
+<div id="modalSuccess" style="display:none;text-align:center;padding:30px 0;animation:fadeSlide .4s ease">
+<div style="font-size:56px;margin-bottom:12px">✅</div>
+<h3 style="font-size:22px;font-weight:700;color:var(--gold);margin-bottom:8px">需求已提交！</h3>
+<p style="font-size:14px;color:var(--text2);line-height:1.6">博士团队将在24小时内通过您留下的联系方式跟进。</p>
+<div style="margin-top:16px;font-size:13px;color:var(--text3)">如有紧急需求：<span style="color:var(--gold);font-weight:500">674348396@qq.com</span></div>
+<button class="btn btn-outline btn-sm" style="margin-top:20px" onclick="closeModal()">关闭</button>
+</div>
+</div>
+</div>
+
+<script>
+// 模态框：打开
+function openModal(agentName) {
+  const overlay = document.getElementById('submitModal');
+  const formWrap = document.getElementById('modalFormWrap');
+  const success = document.getElementById('modalSuccess');
+  formWrap.classList.remove('show');
+  success.style.display = 'none';
+  document.getElementById('modalName').value = '';
+  document.getElementById('modalPhone').value = '';
+  document.getElementById('modalCompany').value = '';
+  document.getElementById('modalCity').value = '';
+  document.getElementById('modalDesc').value = '';
+  document.getElementById('modalAgentName').textContent = '🤖 ' + agentName + '智能体';
+  document.getElementById('modalPillar').value = 'AI代理服务';
+  const agentSelect = document.getElementById('modalAgentSelect');
+  const options = agentSelect.options;
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].value === agentName) { agentSelect.selectedIndex = i; break; }
+  }
+  document.getElementById('modalFeishuLink').href = 'https://scnke9dkyl7e.feishu.cn/base/Wtgeb0qBpaFByJsNomZcd4Sqn2g?table=tblNg5ZdrvlDDwxS&view=vewfjmeAoR';
+  document.querySelectorAll('.modal-channel').forEach(c => c.classList.remove('selected'));
+  overlay.classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('submitModal').classList.remove('show');
+}
+
+function selectInlineChannel(el) {
+  document.querySelectorAll('.modal-channel').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const formWrap = document.getElementById('modalFormWrap');
+  formWrap.classList.add('show');
+  formWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function submitModalForm() {
+  const name = document.getElementById('modalName').value.trim();
+  const phone = document.getElementById('modalPhone').value.trim();
+  if (!name) { alert('请填写姓名'); return; }
+  if (!phone) { alert('请填写手机号'); return; }
+  if (!/^1\d{10}$/.test(phone)) { alert('手机号格式不正确'); return; }
+
+  const company = document.getElementById('modalCompany').value.trim();
+  const city = document.getElementById('modalCity').value.trim();
+  const pillar = document.getElementById('modalPillar').value;
+  const agent = document.getElementById('modalAgentSelect').value;
+  const desc = document.getElementById('modalDesc').value.trim();
+
+  const formData = {
+    name: name, phone: phone,
+    company: company || '未填写', city: city || '未填写',
+    pillar: pillar || '未选择', agent: agent || '未选择',
+    description: desc || '未填写', _subject: `【中原帮办需求】${name} - ${pillar || '未选择'} - ${agent || '未选择'}`
+  };
+
+  fetch('https://formsubmit.co/ajax/674348396@qq.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById('modalFormWrap').classList.remove('show');
+      document.getElementById('modalSuccess').style.display = 'block';
+    } else {
+      fallbackMail(formData._subject, formData);
+    }
+  }).catch(() => { fallbackMail(formData._subject, formData); });
+}
+
+function fallbackMail(subject, data) {
+  const body = `姓名：${data.name}\n手机号：${data.phone}\n企业：${data.company}\n城市：${data.city}\n板块：${data.pillar}\n方向：${data.agent}\n需求：${data.description}`;
+  window.open(`mailto:674348396@qq.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+  alert('自动提交遇到问题，已为您打开邮箱客户端。');
+}
+
+document.getElementById('submitModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+function handleFeishuClick(event) {
+  event.preventDefault();
+  const href = document.getElementById('modalFeishuLink').href;
+  closeModal();
+  setTimeout(() => window.open(href, '_blank'), 300);
+}
+
+// 为每个智能体卡片生成二维码
+document.querySelectorAll('.a-qr').forEach(img => {
+  const agent = img.getAttribute('data-agent');
+  if (!agent) return;
+  const base = window.location.origin === 'https://ylyhyue.github.io' ? 'https://ylyhyue.github.io' : window.location.origin;
+  const url = base + '/submit.html?agent=' + encodeURIComponent(agent);
+  img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=' + encodeURIComponent(url);
+});
+</script>
+</body>
+</html>

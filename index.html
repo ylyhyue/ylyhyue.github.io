@@ -63,35 +63,8 @@ a:hover{color:var(--gold)}
 .pillar .pillar-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:16px}
 .pillar .pillar-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .pillar-tag{padding:4px 10px;border-radius:6px;font-size:11px;border:1px solid var(--border);color:var(--text3)}
-.pillar .pillar-learn{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent2);margin-top:16px;transition:gap .2s}
-.pillar:hover .pillar-learn{gap:10px}
-
-/* PILLAR DETAIL (expandable) */
-.pillar-detail{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
-.pillar-detail.show{display:block;animation:fadeSlide .4s ease}
-@keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.pillar-detail h4{font-size:14px;color:var(--gold);margin:16px 0 8px;font-weight:600}
-.pillar-detail ul{list-style:none;padding:0}
-.pillar-detail li{font-size:13px;color:var(--text2);padding:6px 0;padding-left:20px;position:relative}
-.pillar-detail li::before{content:'▸';position:absolute;left:0;color:var(--accent2)}
-
-/* AGENTS (inside pillar 3) */
-.agents-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:12px}
-.agent-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all .3s;position:relative;display:flex;gap:16px;align-items:flex-start}
-.agent-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 8px 24px rgba(108,92,231,.12)}
-.agent-card .a-left{flex:1;min-width:0}
-.agent-card .a-icon{font-size:28px;margin-bottom:8px}
-.agent-card .a-name{font-size:15px;font-weight:700;margin-bottom:2px}
-.agent-card .a-stars{font-size:11px;color:var(--gold);margin-bottom:8px}
-.agent-card .a-desc{font-size:13px;color:var(--text2);line-height:1.6}
-.agent-card .a-advantage{font-size:12px;color:var(--accent2);margin-top:8px;padding:6px 10px;background:rgba(108,92,231,.08);border-radius:6px;line-height:1.5}
-.agent-card .a-submit{display:block;width:100%;margin-top:12px;padding:10px 0;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent3));color:#fff;font-size:14px;font-weight:600;text-align:center;cursor:pointer;border:none;transition:all .3s}
-.agent-card .a-submit:hover{background:linear-gradient(135deg,var(--accent2),var(--accent));transform:translateY(-2px);box-shadow:0 4px 12px rgba(108,92,231,.3)}
-.agent-card .a-right{display:flex;flex-direction:column;align-items:center;flex-shrink:0;padding-top:4px}
-.agent-card .a-qr{width:80px;height:80px;border-radius:6px;background:#fff;padding:3px;opacity:.9;transition:opacity .2s}
-.agent-card:hover .a-qr{opacity:1}
-.agent-card .a-qr-tip{font-size:10px;color:var(--text3);margin-top:6px;text-align:center;white-space:nowrap}
-.agent-card:hover .a-qr-tip{color:var(--accent2)}
+.pillar-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--accent2);margin-top:16px;padding:10px 20px;border:1px solid var(--accent);border-radius:8px;background:rgba(108,92,231,.06);transition:all .3s}
+.pillar-link:hover{background:var(--accent);color:#fff;transform:translateY(-2px);gap:10px}
 
 /* PRICING */
 .pricing-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -213,7 +186,6 @@ footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);font-
   .form-row{grid-template-columns:1fr}
   .modal-channels{grid-template-columns:1fr}
   .modal-form-wrap .form-row{grid-template-columns:1fr}
-  .agents-grid{grid-template-columns:1fr}
   .pricing-tags{flex-direction:column;align-items:center}
   .pricing-tag{min-width:auto;width:100%;max-width:300px}
   .modal-box{padding:24px;margin:10px}
@@ -244,7 +216,7 @@ footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);font-
 
 <div class="pillars">
 <!-- 板块1 -->
-<div class="pillar" onclick="togglePillar('p1')">
+<a href="pillar1.html" class="pillar">
 <div class="pillar-num">板块 01</div>
 <div class="pillar-icon">📋</div>
 <h3>政务帮办代办</h3>
@@ -257,28 +229,11 @@ footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);font-
 <span class="pillar-tag">补贴申领</span>
 <span class="pillar-tag">帮办代办</span>
 </div>
-<span class="pillar-learn">展开详情 →</span>
-<div class="pillar-detail" id="p1">
-<h4>服务内容</h4>
-<ul>
-<li>所有个人和企业可办理事项精准检索</li>
-<li>高频办理事项快速匹配办理入口</li>
-<li>代跑窗口、代填表单、代交材料</li>
-<li>自动生成所需材料清单和模板</li>
-<li>从提交到办结全程跟踪提醒</li>
-<li>河南省/平顶山市本地政策和窗口经验</li>
-</ul>
-<h4>适合人群</h4>
-<ul>
-<li>初创企业：工商注册、税务登记、社保开户</li>
-<li>中小企业：证照办理、年检年报、变更注销</li>
-<li>个人办事：社保医保、公积金、不动产登记</li>
-</ul>
-</div>
-</div>
+<span class="pillar-link">查看详情 →</span>
+</a>
 
 <!-- 板块2 -->
-<div class="pillar" onclick="togglePillar('p2')">
+<a href="pillar2.html" class="pillar">
 <div class="pillar-num">板块 02</div>
 <div class="pillar-icon">📐</div>
 <h3>技术顾问陪跑</h3>
@@ -292,237 +247,24 @@ footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);font-
 <span class="pillar-tag">考证辅导</span>
 <span class="pillar-tag">大赛辅导</span>
 </div>
-<span class="pillar-learn">展开详情 →</span>
-<div class="pillar-detail" id="p2">
-<h4>服务内容</h4>
-<ul>
-<li>标准研制：团体标准、地方标准、企业标准起草编撰</li>
-<li>标准化试点培育与申报：国家级/省级服务业标准化试点</li>
-<li>项目申报：高企认定、专精特新、质量奖、科技项目</li>
-<li>标准化人才培育：条码师岗位能力、人工智能等培训</li>
-<li>考证辅导：经济师、工程师等职业资格考试指导</li>
-<li>大赛辅导：创新创业大赛、物品编码大赛、互联网+大赛</li>
-<li>专利申报：发明专利、实用新型、软著申请</li>
-</ul>
-<h4>博士团队背书</h4>
-<ul>
-<li>中国贸促会营商环境促进标准化试点评审专家</li>
-<li>中国条码技术与应用协会标准工作委员会专家委员</li>
-<li>河南省标准化和质量研究院评审专家</li>
-<li>河南省市场监督管理局标准化专家</li>
-<li>团标3项 · 国标参编 · 试点评审49项 · 企业标准百余项</li>
-</ul>
-</div>
-</div>
+<span class="pillar-link">查看详情 →</span>
+</a>
 
 <!-- 板块3 -->
-<div class="pillar" onclick="togglePillar('p3')">
+<a href="pillar3.html" class="pillar">
 <div class="pillar-num">板块 03</div>
 <div class="pillar-icon">🤖</div>
 <h3>AI代理服务</h3>
 <div class="pillar-sub">按行业定制AI工具</div>
-<p class="pillar-desc">根据不同行业提供定制化AI工具，包括本平台提供的12个智能体。AI处理80%标准化工作，真人介入20%关键节点。</p>
+<p class="pillar-desc">根据不同行业提供定制化AI工具，包括本平台提供的14个智能体。AI处理80%标准化工作，真人介入20%关键节点。</p>
 <div class="pillar-tags">
-<span class="pillar-tag">12个智能体</span>
+<span class="pillar-tag">14个智能体</span>
 <span class="pillar-tag">行业定制</span>
 <span class="pillar-tag">7×24在线</span>
 <span class="pillar-tag">真人复核</span>
 </div>
-<span class="pillar-learn">查看智能体矩阵 →</span>
-<div class="pillar-detail" id="p3">
-<h4>12个定制化AI智能体</h4>
-<div class="agents-grid">
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">📐</div>
-<div class="a-name">标准化智能体</div>
-<div class="a-stars">★★★★★</div>
-<div class="a-desc">提供参与标准研制、标准化试点培育和申报等全链条标准化服务。从团体标准、地方标准到企业标准起草编撰，博士团队全程陪跑。</div>
-<div class="a-advantage">💡 标准化博士团队加持 · 团标3项 · 国标参编 · 试点评审49项</div>
-<button class="a-submit" onclick="openModal('标准化', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="标准化" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">🏛</div>
-<div class="a-name">营商环境智能体</div>
-<div class="a-stars">★★★★★</div>
-<div class="a-desc">国家级营商环境评审专家领衔，提供营商环境评价、标准化试点培育、企业合规诊断等服务，助力企业精准对接政策红利。</div>
-<div class="a-advantage">💡 中国贸促会营商环境标准化试点评审专家领衔</div>
-<button class="a-submit" onclick="openModal('营商环境', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="营商环境" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">📋</div>
-<div class="a-name">政务服务智能体</div>
-<div class="a-stars">★★★★</div>
-<div class="a-desc">所有个人和企业可办理事项、高频办理事项，帮助快速找到事项办理入口，通过帮办代办服务提高办事效率。代跑窗口、代填表单、代交材料。</div>
-<div class="a-advantage">💡 在行政服务中心工作多年 · 熟悉本地政策和办理流程</div>
-<button class="a-submit" onclick="openModal('政务服务', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="政务服务" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">📌</div>
-<div class="a-name">项目申报智能体</div>
-<div class="a-stars">★★★★★</div>
-<div class="a-desc">高新技术企业认定、专精特新企业申报、质量奖、科技项目申报等全流程托管。从材料准备到评审答辩，博士团队全程陪跑。</div>
-<div class="a-advantage">💡 在物流园区担任企业服务部长 · 深谙企业痛点</div>
-<button class="a-submit" onclick="openModal('项目申报', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="项目申报" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">🏆</div>
-<div class="a-name">大赛辅导智能体</div>
-<div class="a-stars">★★★★★</div>
-<div class="a-desc">大学生创新创业大赛咨询辅导、全国物品编码大赛咨询辅导、互联网+大赛咨询辅导。从选题策划到路演答辩，专业导师全程指导。</div>
-<div class="a-advantage">💡 河南省大众创业导师 · 多年大赛辅导实战经验</div>
-<button class="a-submit" onclick="openModal('大赛辅导', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="大赛辅导" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">🚀</div>
-<div class="a-name">OPC孵化智能体</div>
-<div class="a-stars">★★★★</div>
-<div class="a-desc">创业孵化全流程陪跑，从商业模式梳理到资源对接，从注册开户到首批客户获取。为初创企业提供"一站式"孵化服务。</div>
-<div class="a-advantage">💡 河南省大众创业导师 · 创业指导师（高级技师）</div>
-<button class="a-submit" onclick="openModal('OPC孵化', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="OPC孵化" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">📱</div>
-<div class="a-name">产品数字化智能体</div>
-<div class="a-stars">★★★</div>
-<div class="a-desc">按照产品条码、传感器、车载终端、数字化系统平台等产品服务进行分类，帮助企业完成产品数字化升级和条码溯源体系建设。</div>
-<div class="a-advantage">💡 中国条码技术与应用协会标准工作委员会专家委员</div>
-<button class="a-submit" onclick="openModal('产品数字化', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="产品数字化" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">📝</div>
-<div class="a-name">专利申报智能体</div>
-<div class="a-stars">★★★</div>
-<div class="a-desc">发明专利、实用新型、软件著作权申请全流程服务。从技术交底书撰写到审查意见答复，专业团队确保申报质量。</div>
-<div class="a-advantage">💡 国家技术经纪人 · 高校成果转化专家</div>
-<button class="a-submit" onclick="openModal('专利申报', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="专利申报" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">🎓</div>
-<div class="a-name">培训考证智能体</div>
-<div class="a-stars">★★★</div>
-<div class="a-desc">涵盖《条码师岗位能力要求》《人工智能》等培训课程，经济师、工程师等职业资格考试辅导。从备考规划到考点精讲，系统化培训体系。</div>
-<div class="a-advantage">💡 河南城建学院兼职教师 · 校企合作产教融合</div>
-<button class="a-submit" onclick="openModal('培训考证', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="培训考证" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">🛒</div>
-<div class="a-name">电商合规智能体</div>
-<div class="a-stars">★★</div>
-<div class="a-desc">通过GS1系统为电商产品统一规范，提供出海合规服务。从产品条码规范到跨境合规认证，确保电商运营合规无忧。</div>
-<div class="a-advantage">💡 中国条码技术与应用协会标准工作委员会专家委员</div>
-<button class="a-submit" onclick="openModal('电商合规', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="电商合规" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">🌐</div>
-<div class="a-name">外贸合规智能体</div>
-<div class="a-stars">★★</div>
-<div class="a-desc">GS1国际标准合规、UDI医疗编码唯一识别、DPP数字产品护照合规及增值服务。帮助企业打通国际贸易合规通道。</div>
-<div class="a-advantage">💡 GS1国际标准认证专家 · 条码与编码标准化</div>
-<button class="a-submit" onclick="openModal('外贸合规', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="外贸合规" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-<div class="agent-card">
-<div class="a-left">
-<div class="a-icon">⚡</div>
-<div class="a-name">用电节约智能体</div>
-<div class="a-stars">★</div>
-<div class="a-desc">用电节约和能源管理服务，路径"先降本（容改需）后增效（数字化平台电力可视化进行售电优惠），再利用算法节能减排"。</div>
-<div class="a-advantage">💡 能源管理专业团队 · 容改需·电力可视化·算法节能减排</div>
-<button class="a-submit" onclick="openModal('用电节约', event)">提交需求 →</button>
-</div>
-<div class="a-right">
-<img class="a-qr" data-agent="用电节约" alt="长按识别提交需求" width="80" height="80" onclick="event.stopPropagation()">
-<div class="a-qr-tip">长按识别 提交需求</div>
-</div>
-</div>
-
-</div>
-<h4 style="margin-top:16px">服务模式</h4>
-<ul>
-<li>AI智能问答，7×24即时响应</li>
-<li>按行业定制AI工作流和工具链</li>
-<li>博士团队关键节点真人复核</li>
-<li>从需求诊断到交付全程跟踪</li>
-</ul>
-</div>
-</div>
+<span class="pillar-link">查看智能体矩阵 →</span>
+</a>
 </div>
 </div>
 </section>
@@ -628,7 +370,7 @@ footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);font-
 </div>
 <div class="form-row">
 <div class="form-group"><label>选择板块</label><select id="inlinePillar"><option value="">-- 请选择 --</option><option value="政务帮办代办">板块1·政务帮办代办</option><option value="技术顾问陪跑">板块2·技术顾问陪跑</option><option value="AI代理服务">板块3·AI代理服务</option></select></div>
-<div class="form-group"><label>需求方向</label><select id="inlineAgent"><option value="">-- 请选择 --</option><option value="标准化">标准化</option><option value="营商环境">营商环境</option><option value="政务服务">政务服务</option><option value="项目申报">项目申报</option><option value="大赛辅导">大赛辅导</option><option value="OPC孵化">OPC孵化</option><option value="产品数字化">产品数字化</option><option value="专利申报">专利申报</option><option value="培训考证">培训考证</option><option value="电商合规">电商合规</option><option value="外贸合规">外贸合规</option><option value="用电节约">用电节约</option></select></div>
+<div class="form-group"><label>需求方向</label><select id="inlineAgent"><option value="">-- 请选择 --</option><option value="标准化">标准化</option><option value="营商环境">营商环境</option><option value="政务服务">政务服务</option><option value="项目申报">项目申报</option><option value="大赛辅导">大赛辅导</option><option value="OPC孵化">OPC孵化</option><option value="产品数字化">产品数字化</option><option value="专利申报">专利申报</option><option value="培训考证">培训考证</option><option value="电商合规">电商合规</option><option value="外贸合规">外贸合规</option><option value="用电节约">用电节约</option><option value="智慧交通">智慧交通</option><option value="数据资产">数据资产</option></select></div>
 </div>
 <div class="form-row single">
 <div class="form-group"><label>业务需求描述</label><textarea id="inlineDesc" placeholder="请简要描述您的业务需求……"></textarea></div>
@@ -835,18 +577,6 @@ function handleFeishuClick(event) {
   setTimeout(() => window.open(href, '_blank'), 300);
 }
 
-function togglePillar(id) {
-  const el = document.getElementById(id);
-  const learn = el.previousElementSibling;
-  if (el.classList.contains('show')) {
-    el.classList.remove('show');
-    learn.textContent = learn.textContent.replace('收起', '展开').replace('查看', '展开').replace('←', '→');
-  } else {
-    el.classList.add('show');
-    learn.textContent = learn.textContent.replace('展开', '收起').replace('查看', '收起').replace('→', '←');
-  }
-}
-
 // 内嵌表单
 function showInlineForm() {
   const panel = document.getElementById('inlineFormPanel');
@@ -922,15 +652,6 @@ const obs = new IntersectionObserver((entries)=>{
   });
 },{threshold:0.1});
 cards.forEach(c=>obs.observe(c));
-
-// 为每个智能体卡片生成二维码，指向当前域名的 submit.html?agent=智能体名称
-document.querySelectorAll('.a-qr').forEach(img => {
-  const agent = img.getAttribute('data-agent');
-  if (!agent) return;
-  const base = window.location.origin === 'https://ylyhyue.github.io' ? 'https://ylyhyue.github.io' : window.location.origin;
-  const url = base + '/submit.html?agent=' + encodeURIComponent(agent);
-  img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=' + encodeURIComponent(url);
-});
 </script>
 </body>
 </html>
